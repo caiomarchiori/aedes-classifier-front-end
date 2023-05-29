@@ -1,3 +1,4 @@
+
 //@Entity
 
 public class Acomodacao implements IAcomodacao{
@@ -13,6 +14,17 @@ public class Acomodacao implements IAcomodacao{
 	public Acomodacao(int numero, int ocupacaoMaxima) {
 		this.numero = numero;
 		this.ocupacaoMaxima = ocupacaoMaxima;
+	}
+	
+	//inner class
+	public enum EEstadoOcupacao{
+		DISPONIVEL,
+		OCUPADO,
+		MANUTENCAO;
+
+		public int getEstadoOcupacao() {
+			return ordinal() ; //retorna em forma de inteiro
+		}
 	}
 
 	public EEstadoOcupacao getEstadoOcupacao() {
