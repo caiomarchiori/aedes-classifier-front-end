@@ -1,19 +1,45 @@
 package Model;
 import java.util.Date;
 
-import Model.Enums.ETipoPagamento;
-
 //@Entity
 public class Pagamento {
-	// @Id
-	int Id;
+
 	private final ETipoPagamento tipo;
 	private final Date data = new Date();
-	private final double valor;
+		private final double valor;
 
 	public Pagamento(int Id, ETipoPagamento tipo, double valor) {
-		this.Id = Id;
 		this.tipo = tipo;
 		this.valor = valor;
 	}
+
+	public ETipoPagamento getTipo() {
+		return tipo;
+	}
+
+	public Date getData() {
+		return data;
+	}
+
+	public double getValor() {
+		return valor;
+	}	
+	
+	public enum ETipoPagamento {
+		PIX("Pix"),
+		DEBITO("Débito"),
+		CREDITO("Crédito");
+
+		private String descricao;
+
+		private ETipoPagamento(String descricao) {
+			this.descricao = descricao;
+		}
+
+		public String getDescricao() {
+			return descricao;
+		}
+	}
+
+	
 }

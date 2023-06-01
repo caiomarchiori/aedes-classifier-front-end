@@ -13,7 +13,7 @@ public class Acomodacao implements IAcomodacao {
 		this.numero = numero;
 		this.ocupacaoMaxima = ocupacaoMaxima;
 		this.tipoAcomodacao= tipoAcomodacao;
-		setEstadoOcupacao(EEstadoOcupacao.OCUPADO);
+		setEstadoOcupacao(EEstadoOcupacao.DISPONIVEL);
 	}
 
 	public enum EEstadoOcupacao {
