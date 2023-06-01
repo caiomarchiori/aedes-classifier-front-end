@@ -1,17 +1,20 @@
+package Model;
 import java.util.ArrayList;
 
+import Model.Interfaces.IConta;
+
 //@Entity
-public class Conta implements IConta{
-	//@Id
+public class Conta implements IConta {
+	// @Id
 	int Id;
-	
-	ArrayList<ItemConta>itens = new ArrayList<>();
-	
-	public Conta (int Id) {
+
+	ArrayList<ItemConta> itens = new ArrayList<>();
+
+	public Conta(int Id) {
 		this.Id = Id;
 	}
-	
-	//CORRIGIR
+
+	// CORRIGIR
 	public void addItem(Item item, int qtde) {
 		itens.add(null);
 	}

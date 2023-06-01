@@ -1,29 +1,26 @@
+package Model;
 
-//@Entity
+import Model.Interfaces.IAcomodacao;
 
-public class Acomodacao implements IAcomodacao{
-	//@numero
+public class Acomodacao implements IAcomodacao {
+
 	private final int numero;
 	private final int ocupacaoMaxima;
+	private final TipoAcomodacao tipoAcomodacao;
 	private EEstadoOcupacao estadoOcupacao;
-	
-	public Acomodacao() {
-		
-	}
 
-	public Acomodacao(int numero, int ocupacaoMaxima) {
+	public Acomodacao(int numero, int ocupacaoMaxima, TipoAcomodacao tipoAcomodacao) {
 		this.numero = numero;
 		this.ocupacaoMaxima = ocupacaoMaxima;
+		this.tipoAcomodacao= tipoAcomodacao;
+		setEstadoOcupacao(EEstadoOcupacao.OCUPADO);
 	}
-	
-	//inner class
-	public enum EEstadoOcupacao{
-		DISPONIVEL,
-		OCUPADO,
-		MANUTENCAO;
+
+	public enum EEstadoOcupacao {
+		DISPONIVEL, OCUPADO, MANUTENCAO;
 
 		public int getEstadoOcupacao() {
-			return ordinal() ; //retorna em forma de inteiro
+			return ordinal();
 		}
 	}
 
@@ -48,13 +45,14 @@ public class Acomodacao implements IAcomodacao{
 	}
 
 	public String getTipo() {
-		return null;
+		return tipoAcomodacao.getNome();
 	}
 
 	public double getTarifaDiaria() {
-		return 0;
+		return tipoAcomodacao.getTarifaDiaria();
 	}
+
 	public double getAdicionalIAcompanhante() {
-		return 0;
+		return tipoAcomodacao.getAdicionalAcompanhante();
 	}
 }

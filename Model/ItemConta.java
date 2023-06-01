@@ -1,13 +1,14 @@
+package Model;
 import java.util.Date;
 
 //@Entity
 public class ItemConta {
-	//@Id
+	// @Id
 	int Id;
 	private final Date dataHora = new Date();
 	private final double preco;
 	private final int qtde;
-	
+
 	private Item item;
 
 	public ItemConta(int Id, double preco, int qtde) {

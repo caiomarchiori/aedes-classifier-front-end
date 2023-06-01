@@ -1,23 +1,22 @@
+package Model;
+
+import Model.Interfaces.IHospede;
+
 //@Entity
-public class Hospede implements IHospede{
-	//@Cpf
-	private final long Cpf;
+public class Hospede implements IHospede {
+	// @Cpf
+	private final long cpf;
 	private String nome;
 	private String email;
 	private long telefone;
-	
-	public Hospede() {
-		
-	}
 
 	public Hospede(long cpf, String nome) {
-		this.Cpf = cpf;
+		this.cpf = cpf;
 		this.nome = nome;
 	}
 
-
 	public long getCpf() {
-		return Cpf;
+		return cpf;
 	}
 
 	public String getNome() {
@@ -42,9 +41,5 @@ public class Hospede implements IHospede{
 
 	public void setTelefone(long telefone) {
 		this.telefone = telefone;
-	}
-
-	public long getcpf() {
-		return this.Cpf;
 	}
 }

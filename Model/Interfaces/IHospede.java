@@ -1,7 +1,12 @@
+package Model.Interfaces;
 
 public interface IHospede {
-	long getcpf();
+	
+	long getCpf();
+
 	String getNome();
+
 	String getEmail();
+
 	long getTelefone();
 }

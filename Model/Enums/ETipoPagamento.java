@@ -1,8 +1,7 @@
+package Model.Enums;
 
 public enum ETipoPagamento {
-	PIX("pix"),
-	DEBITO("debito"),
-	CREDITO("credito");
+	PIX("pix"), DEBITO("debito"), CREDITO("credito");
 
 	private String descricao;
 
@@ -10,7 +9,7 @@ public enum ETipoPagamento {
 		this.descricao = descricao;
 	}
 
-	public String getDescricao(){
+	public String getDescricao() {
 		return descricao;
 	}
 }

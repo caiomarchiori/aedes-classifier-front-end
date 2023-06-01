@@ -1,20 +1,14 @@
-//import javax.persistence.Entity
-//import javax.persistence.Id
-//@Entity
-
+package Model;
 public class TipoAcomodacao {
-	
-	//@nome
+
 	private final String nome;
 	private double tarifaDiaria;
 	private double adicionalAcompanhante;
-	
-	public TipoAcomodacao(){
-		
-	}
 
-	public TipoAcomodacao(String nome){
+	public TipoAcomodacao(String nome,double tarifaDiaria,double adicionalAcompanhante) {
 		this.nome = nome;
+		setTarifaDiaria(tarifaDiaria);
+		setAdicionalAcompanhante(adicionalAcompanhante);
 	}
 
 	public String getNome() {

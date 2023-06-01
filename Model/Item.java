@@ -1,6 +1,7 @@
+package Model;
 //@Entity
 public class Item {
-	//@Codigo
+	// @Codigo
 	private final long Codigo;
 	private final String descricao;
 	private double preco;
