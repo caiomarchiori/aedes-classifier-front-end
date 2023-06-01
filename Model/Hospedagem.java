@@ -1,24 +1,35 @@
 package Model;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Random;
 
 import Model.Interfaces.IAcomodacao;
 import Model.Interfaces.IConta;
 import Model.Interfaces.IHospede;
 
 public class Hospedagem {
-	private int inicioCheckin = 13;
-	private int inicioCheckout = 12;
-	private final String id; // uuid
+	private final String id; // random id
+	private static int inicioCheckin = 13;
+	private static int inicioCheckout = 12;
 	private Date Checkin = new Date();
 	private Date Checkout = new Date();
-
+	
+	
 	private IConta conta;
 	private Pagamento pagamento;
 	private IAcomodacao acomodacao;
 	private IHospede hospede;
 
 	ArrayList<IHospede> hospedes = new ArrayList<>();
+	
+	public Hospedagem(String id, IConta conta, Pagamento pagamento, IAcomodacao acomodacao, IHospede hospede)
+		this.id = java.util.UUID.randomUUID().toString();
+		this.conta = conta;
+		this.pagamento = pagamento;
+		this.acomodacao = acomodacao;
+		this.hospede = hospede;
+		this.hospedes = hospedes;
+	}
 
 	public Hospedagem(String id) {
 		this.id = id;
