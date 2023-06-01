@@ -2,7 +2,11 @@ package Model;
 
 import Model.Interfaces.IAcomodacao;
 
-public class Acomodacao implements IAcomodacao {
+import java.io.Serializable;
+
+public class Acomodacao implements IAcomodacao , Serializable {
+
+	private static final long serialVersionUID = -9072030776421927353L;
 
 	private final int numero;
 	private final int ocupacaoMaxima;
@@ -17,7 +21,9 @@ public class Acomodacao implements IAcomodacao {
 	}
 
 	public enum EEstadoOcupacao {
-		DISPONIVEL, OCUPADO, MANUTENCAO;
+		DISPONIVEL,
+		OCUPADO,
+		MANUTENCAO;
 
 		public int getEstadoOcupacao() {
 			return ordinal();
@@ -36,12 +42,8 @@ public class Acomodacao implements IAcomodacao {
 		return numero;
 	}
 
-	public int getOcupacaoMaxima() {
-		return ocupacaoMaxima;
-	}
-
 	public int getOcupacaoMax() {
-		return 0;
+		return ocupacaoMaxima;
 	}
 
 	public String getTipo() {

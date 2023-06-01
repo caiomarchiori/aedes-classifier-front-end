@@ -1,36 +1,71 @@
 package Model;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
-
 import Model.Interfaces.IAcomodacao;
 import Model.Interfaces.IConta;
 import Model.Interfaces.IHospede;
 
-public class Hospedagem {
-	private int inicioCheckin = 13;
-	private int inicioCheckout = 12;
-	private final String id; // uuid
+public class Hospedagem implements Serializable{
+
+	private static final long serialVersionUID = 484748652502511402L;
+
+	private final String id; // random id
+	private static int inicioCheckin = 13;
+	private static int inicioCheckout = 12;
 	private Date Checkin = new Date();
 	private Date Checkout = new Date();
 
-	private IConta conta;
-	private Pagamento pagamento;
-	private IAcomodacao acomodacao;
-	private IHospede hospede;
+	private final IConta conta;
+	private final IAcomodacao acomodacao;
+	private final IHospede hospede;
 
-	ArrayList<IHospede> hospedes = new ArrayList<>();
-
-	public Hospedagem(String id) {
-		this.id = id;
+	private ArrayList<IHospede>acompanhantes = new ArrayList<>();
+	private ArrayList<Pagamento>pagamentos = new ArrayList<>();
+	
+	public Hospedagem(String id, IConta conta, IAcomodacao acomodacao, IHospede hospede){
+		this.id = java.util.UUID.randomUUID().toString();
+		this.conta = conta;
+		this.acomodacao = acomodacao;
+		this.hospede = hospede;
 	}
 
+	public void addPagamentos(Pagamento pagamento) {
+		pagamentos.add(pagamento);
+	}
+	
 	public void addAcompanhantes(IHospede hospede) {
-		hospedes.add(hospede);
+		acompanhantes.add(hospede);
 	}
 
-	public StringBuilder listar() {
+	public String listarHospedagem() {
 		StringBuilder sb = new StringBuilder();
-		return sb;
+		sb.append("Acomodacao escolhida: ");
+		sb.append(this.getAcomodacao());
+		sb.append("\n");
+		
+		sb.append("Data do Checkin: ");
+		sb.append(this.getCheckin());
+		sb.append("\n");
+		
+		sb.append("Data do Checkout: ");
+		sb.append(this.getCheckout());
+		sb.append("\n");
+		
+		sb.append("Lista de hospedes: ");
+		sb.append("\n");
+		for (IHospede iHospede : acompanhantes) {
+			sb.append(iHospede.getNome());
+			sb.append(" - ");
+			sb.append(iHospede.getCpf());
+			sb.append("\n");
+		}
+		
+		sb.append("Total da conta: ");
+		sb.append(this.getConta().getTotal());
+		sb.append("\n");
+
+		return sb.toString();
 	}
 
 	public int getInicioCheckin() {
@@ -53,11 +88,15 @@ public class Hospedagem {
 		return conta;
 	}
 
-	public void setConta(IConta conta) {
-		this.conta = conta;
-	}
-
 	public String getId() {
 		return id;
+	}
+	
+	public IHospede getHospede() {
+		return hospede;
+	}
+	
+	public IAcomodacao getAcomodacao() {
+		return acomodacao;
 	}
 }

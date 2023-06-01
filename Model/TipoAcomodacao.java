@@ -1,5 +1,10 @@
 package Model;
-public class TipoAcomodacao {
+
+import java.io.Serializable;
+
+public class TipoAcomodacao implements Serializable {
+
+	private static final long serialVersionUID = -1229555263144712497L;
 
 	private final String nome;
 	private double tarifaDiaria;
