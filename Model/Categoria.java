@@ -1,11 +1,9 @@
 package Model;
 import java.util.ArrayList;
 
-//@Entity
 public class Categoria {
-	// @Nome
+	
 	private final String Nome;
-
 	ArrayList<Item> itens = new ArrayList<>();
 
 	public Categoria(String nome) {
@@ -16,11 +14,11 @@ public class Categoria {
 		return Nome;
 	}
 
-	public void addIten(Item item) {
+	public void addItem(Item item) {
 		itens.add(item);
 	}
 
-	public void removeIten(Item item) {
+	public void removeItem(Item item) {
 		itens.remove(item);
 	}
 }

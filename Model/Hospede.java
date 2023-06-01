@@ -1,10 +1,9 @@
 package Model;
-
+import java.util.Random;
 import Model.Interfaces.IHospede;
 
-//@Entity
 public class Hospede implements IHospede {
-	// @Cpf
+
 	private final long cpf;
 	private String nome;
 	private String email;
@@ -12,9 +11,9 @@ public class Hospede implements IHospede {
 
 	public Hospede(long cpf, String nome) {
 		this.cpf = cpf;
-		this.nome = nome;
+		this.nome = nome; 
 	}
-
+	
 	public long getCpf() {
 		return cpf;
 	}
