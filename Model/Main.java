@@ -7,6 +7,7 @@ public class Main {
 		// AREA DE TESTES
 		// System.out.println( EEstadoOcupacao.OCUPADO.getEstadoOcupacao());//PRINTA O
 		// NUMERO EM ORDEM
+		
+		// Categoria.listarCatalogo(); //TESTAR DPS
 	}
-
 }

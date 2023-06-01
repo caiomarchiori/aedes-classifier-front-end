@@ -28,4 +28,8 @@ public class ItemConta implements Serializable{
 	public int getQtde() {
 		return qtde;
 	}
+	
+	public Item getItem() {
+		return item;
+	}
 }

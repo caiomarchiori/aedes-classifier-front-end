@@ -21,7 +21,9 @@ public class Acomodacao implements IAcomodacao , Serializable {
 	}
 
 	public enum EEstadoOcupacao {
-		DISPONIVEL, OCUPADO, MANUTENCAO;
+		DISPONIVEL,
+		OCUPADO,
+		MANUTENCAO;
 
 		public int getEstadoOcupacao() {
 			return ordinal();
@@ -40,12 +42,8 @@ public class Acomodacao implements IAcomodacao , Serializable {
 		return numero;
 	}
 
-	public int getOcupacaoMaxima() {
-		return ocupacaoMaxima;
-	}
-
 	public int getOcupacaoMax() {
-		return 0;
+		return ocupacaoMaxima;
 	}
 
 	public String getTipo() {

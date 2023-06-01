@@ -37,11 +37,35 @@ public class Hospedagem implements Serializable{
 	public void addAcompanhantes(IHospede hospede) {
 		acompanhantes.add(hospede);
 	}
-	
-	//ATUALIZAR PODEMOS LISTAR A ACOMODACAO,OS HOSPEDES (NOME DELES) E TAMBEM O SALDO DA CONTA??
-	public StringBuilder listar() {
+
+	public String listarHospedagem() {
 		StringBuilder sb = new StringBuilder();
-		return sb;
+		sb.append("Acomodacao escolhida: ");
+		sb.append(this.getAcomodacao());
+		sb.append("\n");
+		
+		sb.append("Data do Checkin: ");
+		sb.append(this.getCheckin());
+		sb.append("\n");
+		
+		sb.append("Data do Checkout: ");
+		sb.append(this.getCheckout());
+		sb.append("\n");
+		
+		sb.append("Lista de hospedes: ");
+		sb.append("\n");
+		for (IHospede iHospede : acompanhantes) {
+			sb.append(iHospede.getNome());
+			sb.append(" - ");
+			sb.append(iHospede.getCpf());
+			sb.append("\n");
+		}
+		
+		sb.append("Total da conta: ");
+		sb.append(this.getConta().getTotal());
+		sb.append("\n");
+
+		return sb.toString();
 	}
 
 	public int getInicioCheckin() {

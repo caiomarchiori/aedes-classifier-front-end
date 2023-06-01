@@ -27,7 +27,8 @@ public class Conta implements IConta, Serializable{
 	public void removeItem(int index) {
 		itens.remove(index);
 	}
-
+	
+	//ACERTAR COM AS QUANTIDADES DE CADA ITEM
 	public double getTotal() {
 		double sum = 0;
 		for (ItemConta itemConta : itens) {
@@ -35,10 +36,24 @@ public class Conta implements IConta, Serializable{
 		}
 		return sum;
 	}
-	
-	//PODEMOS LISTAR O TOTAL ATUAL DA CONTA E OS ITENS E SUAS RESPECTIVAS QUANTIDADES
-	public StringBuilder listar() {
+
+	public StringBuilder listar(){
 		StringBuilder sb = new StringBuilder();
+		sb.append("Total da conta: ");
+		sb.append(this.getTotal());
+		sb.append("\n");
+		
+		sb.append("Listagem de itens consumidos: ");
+		for (ItemConta itemConta : itens) {
+			sb.append(itemConta.getItem().getDescricao());
+			sb.append("\n");
+			sb.append("Quantidade: ");
+			sb.append(itemConta.getQtde());
+			sb.append("\n");
+			sb.append("Preco por unidade: ");
+			sb.append(itemConta.getPreco());
+			sb.append("\n");
+		}
 		return sb;
 	}
 }
