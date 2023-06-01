@@ -1,12 +1,14 @@
 package Model;
+import java.io.Serializable;
 import java.util.Date;
 
-//@Entity
-public class Pagamento {
+public class Pagamento implements Serializable{
+	
+	private static final long serialVersionUID = 1161873237307073124L;
 
 	private final ETipoPagamento tipo;
 	private final Date data = new Date();
-		private final double valor;
+	private final double valor;
 
 	public Pagamento(int Id, ETipoPagamento tipo, double valor) {
 		this.tipo = tipo;
@@ -40,6 +42,4 @@ public class Pagamento {
 			return descricao;
 		}
 	}
-
-	
 }

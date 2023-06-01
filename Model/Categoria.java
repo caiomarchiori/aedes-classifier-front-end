@@ -1,8 +1,11 @@
 package Model;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Categoria {
-	
+public class Categoria implements Serializable{
+
+	private static final long serialVersionUID = -4951701508964445576L;
+
 	private final String Nome;
 	ArrayList<Item> itens = new ArrayList<>();
 

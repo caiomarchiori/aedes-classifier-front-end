@@ -1,17 +1,22 @@
 package Model;
+import java.io.Serializable;
 import java.util.ArrayList;
-
 import Model.Interfaces.IConta;
 
-//@Entity
-public class Conta implements IConta {
-	// @Id
-	int Id;
-
-	ArrayList<ItemConta> itens = new ArrayList<>();
+public class Conta implements IConta, Serializable{
+	
+	private static final long serialVersionUID = 6143895814781654565L;
+	
+	private final int Id;
+	
+	private ArrayList<ItemConta> itens = new ArrayList<>();
 
 	public Conta(int Id) {
 		this.Id = Id;
+	}
+	
+	public int getId() {
+		return Id;
 	}
 
 	// CORRIGIR
@@ -30,7 +35,8 @@ public class Conta implements IConta {
 		}
 		return sum;
 	}
-
+	
+	//PODEMOS LISTAR O TOTAL ATUAL DA CONTA E OS ITENS E SUAS RESPECTIVAS QUANTIDADES
 	public StringBuilder listar() {
 		StringBuilder sb = new StringBuilder();
 		return sb;

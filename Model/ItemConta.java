@@ -1,28 +1,20 @@
 package Model;
+import java.io.Serializable;
 import java.util.Date;
 
-//@Entity
-public class ItemConta {
-	// @Id
-	int Id;
+public class ItemConta implements Serializable{
+	
+	private static final long serialVersionUID = -9183313291799838201L;
+
 	private final Date dataHora = new Date();
 	private final double preco;
 	private final int qtde;
 
 	private Item item;
 
-	public ItemConta(int Id, double preco, int qtde) {
-		this.Id = Id;
+	public ItemConta(double preco, int qtde) {
 		this.preco = preco;
 		this.qtde = qtde;
-	}
-
-	public int getId() {
-		return Id;
-	}
-
-	public void setId(int Id) {
-		this.Id = Id;
 	}
 
 	public Date getDataHora() {

@@ -1,10 +1,14 @@
 package Model;
-//@Entity
-public class Item {
-	// @Codigo
+
+import java.io.Serializable;
+
+public class Item implements Serializable{
+
+	private static final long serialVersionUID = 3282821309257599875L;
+
 	private final long Codigo;
 	private final String descricao;
-	private double preco;
+	private final double preco;
 
 	public Item(long codigo, String descricao, double preco) {
 		this.Codigo = codigo;
@@ -14,10 +18,6 @@ public class Item {
 
 	public double getPreco() {
 		return preco;
-	}
-
-	public void setPreco(double preco) {
-		this.preco = preco;
 	}
 
 	public long getCodigo() {
