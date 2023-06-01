@@ -21,4 +21,5 @@ public class Categoria {
 	public void removeItem(Item item) {
 		itens.remove(item);
 	}
+	
 }
