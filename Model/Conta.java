@@ -19,20 +19,22 @@ public class Conta implements IConta, Serializable{
 		return Id;
 	}
 
-	// CORRIGIR
 	public void addItem(Item item, int qtde) {
-		itens.add(null);
+		itens.add(new ItemConta(item,qtde));
+	}
+	
+	public void addItem(Item item) {
+		itens.add(new ItemConta(item));
 	}
 
 	public void removeItem(int index) {
 		itens.remove(index);
 	}
 	
-	//ACERTAR COM AS QUANTIDADES DE CADA ITEM
 	public double getTotal() {
 		double sum = 0;
 		for (ItemConta itemConta : itens) {
-			sum += itemConta.getPreco();
+			sum += itemConta.getTotal();
 		}
 		return sum;
 	}
@@ -42,9 +44,14 @@ public class Conta implements IConta, Serializable{
 		sb.append("Total da conta: ");
 		sb.append(this.getTotal());
 		sb.append("\n");
+		sb.append("\n");
 		
-		sb.append("Listagem de itens consumidos: ");
+		sb.append("Listagem de itens consumidos: \n");
 		for (ItemConta itemConta : itens) {
+			sb.append("Nome: ");
+			sb.append(itemConta.getItem().getNome());
+			sb.append("\n");
+			sb.append("Descrição: ");
 			sb.append(itemConta.getItem().getDescricao());
 			sb.append("\n");
 			sb.append("Quantidade: ");

@@ -6,13 +6,31 @@ public class Item implements Serializable{
 
 	private static final long serialVersionUID = 3282821309257599875L;
 
-	private final long Codigo;
-	private final String descricao;
-	private final double preco;
+	private final long codigo;
+	private String nome;
+	private String descricao;
+	private double preco;
 
-	public Item(long codigo, String descricao, double preco) {
-		this.Codigo = codigo;
+	public Item(String nome, long codigo, String descricao, double preco) {
+		this.codigo = codigo;
+		setNome(nome);
+		setDescricao(descricao);
+		setPreco(preco);
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+
+	public void setPreco(double preco) {
 		this.preco = preco;
 	}
 
@@ -21,7 +39,7 @@ public class Item implements Serializable{
 	}
 
 	public long getCodigo() {
-		return Codigo;
+		return codigo;
 	}
 
 	public String getDescricao() {

@@ -7,13 +7,18 @@ public class ItemConta implements Serializable{
 	private static final long serialVersionUID = -9183313291799838201L;
 
 	private final Date dataHora = new Date();
-	private final double preco;
-	private final int qtde;
+	private double preco;
+	private int qtde = 1;
 
 	private Item item;
 
-	public ItemConta(double preco, int qtde) {
-		this.preco = preco;
+	public ItemConta(Item item) {
+		this.item = item;
+		this.preco = item.getPreco();
+	}
+	
+	public ItemConta(Item item, int qtde) {
+		this(item);
 		this.qtde = qtde;
 	}
 
@@ -29,7 +34,11 @@ public class ItemConta implements Serializable{
 		return qtde;
 	}
 	
-	public Item getItem() {
+	public double getTotal() {
+		return getPreco()*getQtde();
+	}
+	
+	public Item getItem() {	
 		return item;
 	}
 }
