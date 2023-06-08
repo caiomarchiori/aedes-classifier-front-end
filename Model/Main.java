@@ -9,8 +9,8 @@ public class Main {
 		// AREA DE TESTES
 		// System.out.println( EEstadoOcupacao.OCUPADO.getEstadoOcupacao());//PRINTA O
 		// NUMERO EM ORDEM
-		ViewJ view = new ViewJ();
-		view.initialize();
+		//ViewJ view = new ViewJ();
+		//view.initialize();
 		// Categoria.listarCatalogo(); //TESTAR DPS
 	}
 }

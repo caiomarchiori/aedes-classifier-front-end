@@ -14,10 +14,11 @@ public class Hospedagem implements Serializable{
 
 	private final String id; // random id
 	private static int inicioCheckin = 13;
-	private static int inicioCheckout = 12;
+	private static int limiteCheckout = 12;
 	private Date checkin = new Date();
-	private Date checkout = new Date();
+	private Date checkout = null;
 
+	
 	private final IConta conta;
 	private final IAcomodacao acomodacao;
 	private final IHospede hospede;
@@ -51,11 +52,21 @@ public class Hospedagem implements Serializable{
 	}
 	
 	public void fazerCheckout() {
+		
+		this.setCheckout(new Date());
 		@SuppressWarnings("deprecation")
-		int hora = this.getCheckin().getHours();
+		int hora = this.getCheckout().getHours();
+		int tempo = this.getCheckout().getDate() - this.getCheckin().getDate(); //arrumar para meses.
+		if(hora>Hospedagem.limiteCheckout) {
+			double valor = (tempo + 1)*(acomodacao.getTarifaDiaria() + acomodacao.getAdicionalAcompanhante());
+			//implementar pagamento.
+		}
 		
 	}
 	
+	public void setCheckout(Date checkout) {
+		this.checkout = checkout;
+	}
 	
 	public void addPagamentos(Pagamento pagamento) {
 		pagamentos.add(pagamento);
@@ -99,8 +110,8 @@ public class Hospedagem implements Serializable{
 		return inicioCheckin;
 	}
 
-	public int getInicioCheckout() {
-		return inicioCheckout;
+	public int getLimiteCheckout() {
+		return limiteCheckout;
 	}
 
 	public Date getCheckin() {

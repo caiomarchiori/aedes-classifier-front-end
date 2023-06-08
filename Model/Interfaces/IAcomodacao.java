@@ -15,5 +15,5 @@ public interface IAcomodacao {
 
 	double getTarifaDiaria();
 
-	double getAdicionalIAcompanhante();
+	double getAdicionalAcompanhante();
 }

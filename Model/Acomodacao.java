@@ -54,7 +54,7 @@ public class Acomodacao implements IAcomodacao , Serializable {
 		return tipoAcomodacao.getTarifaDiaria();
 	}
 
-	public double getAdicionalIAcompanhante() {
+	public double getAdicionalAcompanhante() {
 		return tipoAcomodacao.getAdicionalAcompanhante();
 	}
 }
