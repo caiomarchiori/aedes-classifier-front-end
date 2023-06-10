@@ -39,6 +39,8 @@ public class CreateSequentialFile {
 		Item item; //objeto que será serializado
 		item = new Item("Nome item",123l,"Descricao item",120.50);
 		output.writeObject(item);
+		item = new Item("Nome caio",1234l,"Descricao item",1120.50);
+		output.writeObject(item);
 		}
 		
 		catch(IOException ioException) {

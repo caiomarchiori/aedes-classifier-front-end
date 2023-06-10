@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InvalidClassException;
 import java.io.ObjectInputStream;
+import java.util.ArrayList;
 
 import Model.Item;
 
@@ -33,13 +34,17 @@ public class ReadSequentialFile {
 		}
 	}
 	
-	public void readRecords() throws IOException {
-		Item item;
+	public ArrayList<Item> readRecordsItens() throws IOException {
+		ArrayList<Item> itens = new ArrayList<>();
 		try {
-			item = (Item) input.readObject();
+			Item obj = null;
+			while ((obj = (Item) input.readObject()) != null) {
+				System.out.println("Entrou\n");
+				itens.add(obj);
+			}
 		}
 		catch(EOFException endOfFileException) {
-			return;
+			return itens;
 		}
 		catch(ClassNotFoundException classNotFoundException){
 			System.err.print("Classe incompativel para desserialização.");
@@ -53,6 +58,7 @@ public class ReadSequentialFile {
 			System.err.print("Erro de leitura do arquivo: ");
 			throw ioExeception;
 		}
+		return itens;
 	}
 	
 }
