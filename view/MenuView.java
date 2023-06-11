@@ -73,10 +73,11 @@ public class MenuView extends JFrame {
 		btnCheckout_1.setBounds(149, 138, 139, 23);
 		contentPane.add(btnCheckout_1);
 		
-		JButton btnCheckout_1_1 = new JButton("Listar categoria");
+		JButton btnCheckout_1_1 = new JButton("Catalogo");
 		btnCheckout_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				ItemView itemView = new ItemView();
+				itemView.setVisible(true);
 			}
 		});
 		btnCheckout_1_1.setBounds(149, 176, 139, 23);

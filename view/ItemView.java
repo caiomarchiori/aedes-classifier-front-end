@@ -5,6 +5,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Model.Item;
+import controller.ItemController;
+
 import java.awt.FlowLayout;
 import javax.swing.JList;
 import javax.swing.JTextArea;
@@ -13,10 +17,18 @@ import javax.swing.JComboBox;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JCheckBox;
+import javax.swing.JTable;
 
 public class ItemView extends JFrame {
 
 	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
 
 	/**
 	 * Launch the application.
@@ -38,6 +50,7 @@ public class ItemView extends JFrame {
 	 * Create the frame.
 	 */
 	public ItemView() {
+		ItemController itemController = new ItemController();
 		setTitle("Catalogo de itens");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -51,16 +64,60 @@ public class ItemView extends JFrame {
 		scrollPane.setBounds(38, 123, 347, -104);
 		contentPane.add(scrollPane);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(38, 57, 247, 109);
-		contentPane.add(comboBox);
-		
 		JButton btnNewButton = new JButton("Adicionar item");
+		
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String nome = textField.getText();
+				long codigo = Long.parseLong(textField_1.getText());
+				String descricao = textField_2.getText();
+				double preco = Double.parseDouble(textField_3.getText());
+				Item item = new Item(nome,codigo,descricao,preco);
+				itemController.adicionarItem(item);
+				textField.setText("");
+				textField_1.setText("");
+				textField_2.setText("");
+				textField_3.setText("");
+				
 			}
 		});
-		btnNewButton.setBounds(320, 57, 89, 23);
+		btnNewButton.setBounds(198, 89, 145, 23);
 		contentPane.add(btnNewButton);
+		
+		textField = new JTextField();
+		textField.setBounds(33, 36, 86, 20);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(33, 92, 86, 20);
+		contentPane.add(textField_1);
+		textField_1.setColumns(10);
+		
+		textField_2 = new JTextField();
+		textField_2.setBounds(33, 140, 86, 20);
+		contentPane.add(textField_2);
+		textField_2.setColumns(10);
+		
+		textField_3 = new JTextField();
+		textField_3.setBounds(33, 198, 86, 20);
+		contentPane.add(textField_3);
+		textField_3.setColumns(10);
+		
+		JLabel lblNewLabel = new JLabel("Nome");
+		lblNewLabel.setBounds(33, 11, 46, 14);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Codigo");
+		lblNewLabel_1.setBounds(33, 66, 46, 14);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_1_1 = new JLabel("Descrição");
+		lblNewLabel_1_1.setBounds(33, 115, 46, 14);
+		contentPane.add(lblNewLabel_1_1);
+		
+		JLabel lblNewLabel_1_1_1 = new JLabel("Preço");
+		lblNewLabel_1_1_1.setBounds(38, 171, 46, 14);
+		contentPane.add(lblNewLabel_1_1_1);
 	}
 }

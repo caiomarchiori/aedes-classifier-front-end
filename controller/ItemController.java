@@ -10,20 +10,24 @@ import persistencia.ReadSequentialFile;
 public class ItemController {
 	ReadSequentialFile application = new ReadSequentialFile();
 	ArrayList<Item> itens;
+	String filename = "itens.bin";
 	
-	public ItemController() throws IOException{
-		CreateSequentialFile fl = new CreateSequentialFile();
-		String filename = "itens.bin";
+	public ItemController(){
 		
-		try {
+		if(!application.openFile(filename)) {
+			CreateSequentialFile fl = new CreateSequentialFile();
 			fl.openFile(filename);
-			fl.addRecords();
 			fl.closeFile();
-			application.openFile(filename);
+		};
+		try {
+			
 			itens = application.readRecordsItens();
 			
 			for (Item item : itens) {
+				System.out.println(item.getNome());
 				System.out.println(item.getCodigo());
+				System.out.println(item.getDescricao());
+				System.out.println(item.getPreco());
 			}
 		}
 		catch(IOException e) {
@@ -40,4 +44,19 @@ public class ItemController {
 			}
 		}		
 	}
+	
+	public void adicionarItem(Item item) { //apenas para teste.
+		try {
+			CreateSequentialFile fl = new CreateSequentialFile();
+			itens.add(item);
+			fl.openFile(filename);
+			fl.addRecords(itens);
+			fl.closeFile();
+		}
+		catch(Exception exx) {
+			exx.getMessage();
+		}
+	}
+	
+	
 }

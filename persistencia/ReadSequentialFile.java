@@ -13,14 +13,15 @@ public class ReadSequentialFile {
 	
 	private ObjectInputStream input;
 	
-	public void openFile(String filename) throws IOException {
+	public boolean openFile(String filename){
 		try {
 			input = new ObjectInputStream(new FileInputStream(filename));
 		}
 		catch(IOException ioException){
-			System.err.println("Erro ao abrir o arquivo: ");
-			throw ioException;
+			System.out.println("Erro ao abrir o arquivo");
+			return false;
 		}
+		return true;
 	}
 	
 	public void closeFile() throws IOException{
