@@ -22,13 +22,15 @@ public class ItemController {
 		try {
 			
 			itens = application.readRecordsItens();
-			
+			/*
+			System.out.println("controller");
 			for (Item item : itens) {
 				System.out.println(item.getNome());
 				System.out.println(item.getCodigo());
 				System.out.println(item.getDescricao());
 				System.out.println(item.getPreco());
 			}
+			*/
 		}
 		catch(IOException e) {
 			System.err.println(filename);
@@ -58,5 +60,12 @@ public class ItemController {
 		}
 	}
 	
-	
+	public String listarItens() {
+		StringBuilder sb = new StringBuilder();
+		for (Item item : itens) {
+			sb.append(item.getDescricao() + " ");
+			sb.append(item.getPreco() + "\n");
+		}
+		return sb.toString();
+	}	
 }

@@ -45,7 +45,7 @@ public class MenuView extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Checkin ");
+		JButton btnNewButton = new JButton("Checkin");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}

@@ -11,6 +11,7 @@ import controller.ItemController;
 
 import java.awt.FlowLayout;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 import javax.swing.JComboBox;
@@ -52,7 +53,7 @@ public class ItemView extends JFrame {
 	public ItemView() {
 		ItemController itemController = new ItemController();
 		setTitle("Catalogo de itens");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -78,10 +79,9 @@ public class ItemView extends JFrame {
 				textField_1.setText("");
 				textField_2.setText("");
 				textField_3.setText("");
-				
 			}
 		});
-		btnNewButton.setBounds(198, 89, 145, 23);
+		btnNewButton.setBounds(198, 30, 145, 23);
 		contentPane.add(btnNewButton);
 		
 		textField = new JTextField();
@@ -95,7 +95,7 @@ public class ItemView extends JFrame {
 		textField_1.setColumns(10);
 		
 		textField_2 = new JTextField();
-		textField_2.setBounds(33, 140, 86, 20);
+		textField_2.setBounds(33, 145, 86, 20);
 		contentPane.add(textField_2);
 		textField_2.setColumns(10);
 		
@@ -105,19 +105,43 @@ public class ItemView extends JFrame {
 		textField_3.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("Nome");
-		lblNewLabel.setBounds(33, 11, 46, 14);
+		lblNewLabel.setBounds(33, 15, 46, 14);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Codigo");
-		lblNewLabel_1.setBounds(33, 66, 46, 14);
+		lblNewLabel_1.setBounds(33, 70, 46, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Descrição");
-		lblNewLabel_1_1.setBounds(33, 115, 46, 14);
+		lblNewLabel_1_1.setBounds(33, 125, 60, 14);
 		contentPane.add(lblNewLabel_1_1);
 		
 		JLabel lblNewLabel_1_1_1 = new JLabel("Preço");
-		lblNewLabel_1_1_1.setBounds(38, 171, 46, 14);
+		lblNewLabel_1_1_1.setBounds(33, 180, 46, 14);
 		contentPane.add(lblNewLabel_1_1_1);
+		
+		
+		JButton btnNewButton2 = new JButton("Listar itens");
+		btnNewButton2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null,itemController.listarItens());
+			}
+		});
+		btnNewButton2.setBounds(198, 80, 145, 23);
+		contentPane.add(btnNewButton2);
+		
+		
+		
+		//CRIAR UM CONJUNTO DE BOTOES, BOTAO CADASTRO,BOTAO LISTAR...
+		JButton btntest = new JButton("Teste botoes separados");
+		btntest.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("testing");
+			}
+		});
+		btntest.setBounds(198, 190, 175, 23);
+		contentPane.add(btntest);
 	}
+	
+	
 }
