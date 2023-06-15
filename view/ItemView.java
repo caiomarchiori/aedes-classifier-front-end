@@ -30,6 +30,8 @@ public class ItemView extends JFrame {
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
+	
+	private JPanel contentPane2;
 
 	/**
 	 * Launch the application.
@@ -55,6 +57,7 @@ public class ItemView extends JFrame {
 		setTitle("Catalogo de itens");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
+
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -66,7 +69,6 @@ public class ItemView extends JFrame {
 		contentPane.add(scrollPane);
 		
 		JButton btnNewButton = new JButton("Adicionar item");
-		
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String nome = textField.getText();
@@ -83,7 +85,7 @@ public class ItemView extends JFrame {
 		});
 		btnNewButton.setBounds(198, 30, 145, 23);
 		contentPane.add(btnNewButton);
-		
+
 		textField = new JTextField();
 		textField.setBounds(33, 36, 86, 20);
 		contentPane.add(textField);
@@ -119,7 +121,6 @@ public class ItemView extends JFrame {
 		JLabel lblNewLabel_1_1_1 = new JLabel("Preço");
 		lblNewLabel_1_1_1.setBounds(33, 180, 46, 14);
 		contentPane.add(lblNewLabel_1_1_1);
-		
 		
 		JButton btnNewButton2 = new JButton("Listar itens");
 		btnNewButton2.addActionListener(new ActionListener() {

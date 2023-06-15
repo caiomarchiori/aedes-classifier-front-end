@@ -48,18 +48,20 @@ public class MenuView extends JFrame {
 		JButton btnNewButton = new JButton("Checkin");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				System.out.println("Botao de checkin");
 			}
 		});
 		btnNewButton.setBounds(149, 47, 139, 23);
 		contentPane.add(btnNewButton);
 		
-		JLabel lblNewLabel = new JLabel("Menu");
-		lblNewLabel.setBounds(205, 23, 26, 14);
+		JLabel lblNewLabel = new JLabel("Menu Principal");
+		lblNewLabel.setBounds(180, 23, 84, 14);
 		contentPane.add(lblNewLabel);
 		
 		JButton btnCheckout = new JButton("Checkout");
 		btnCheckout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				System.out.println("Botao de checkout");
 			}
 		});
 		btnCheckout.setBounds(149, 93, 139, 23);
@@ -68,6 +70,7 @@ public class MenuView extends JFrame {
 		JButton btnCheckout_1 = new JButton("Listar hospedagem");
 		btnCheckout_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				System.out.println("Botao de listar hospedagem");
 			}
 		});
 		btnCheckout_1.setBounds(149, 138, 139, 23);

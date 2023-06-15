@@ -8,6 +8,7 @@ import persistencia.CreateSequentialFile;
 import persistencia.ReadSequentialFile;
 
 public class ItemController {
+
 	ReadSequentialFile application = new ReadSequentialFile();
 	ArrayList<Item> itens;
 	String filename = "itens.bin";
