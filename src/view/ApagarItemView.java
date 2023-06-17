@@ -36,7 +36,7 @@ public class ApagarItemView extends JFrame {
 	ItemController itemController = new ItemController();
 	
 	public ApagarItemView() {
-		setTitle("Catalogo de itens");
+		setTitle("Apagar itens");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 
@@ -50,9 +50,9 @@ public class ApagarItemView extends JFrame {
 		scrollPane.setBounds(38, 123, 347, -104);
 		contentPane.add(scrollPane);
 		JLabel lblCodigo = new JLabel("Codigo");
-		lblCodigo.setBounds(69, 30, 46, 14);
+		lblCodigo.setBounds(38, 96, 46, 14);
 		textField = new JTextField();
-		textField.setBounds(33, 48, 116, 20);
+		textField.setBounds(90, 93, 116, 20);
 		textField.setColumns(10);
 		contentPane.add(textField);
 		
@@ -62,7 +62,7 @@ public class ApagarItemView extends JFrame {
 				apagarItem(textField.getText());
 			}
 		});
-		btnNewButton.setBounds(200, 47, 145, 23);
+		btnNewButton.setBounds(267, 92, 145, 23);
 		contentPane.add(btnNewButton);
 		
 		

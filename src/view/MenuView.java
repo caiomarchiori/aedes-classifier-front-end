@@ -16,10 +16,6 @@ public class MenuView extends JFrame {
 
 	private JPanel contentPane;
 
-
-	/**
-	 * Create the frame.
-	 */
 	public MenuView() {
 		setTitle("Menu");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -36,7 +32,7 @@ public class MenuView extends JFrame {
 				System.out.println("Botao de checkin");
 			}
 		});
-		btnNewButton.setBounds(149, 47, 139, 23);
+		btnNewButton.setBounds(10, 59, 139, 23);
 		contentPane.add(btnNewButton);
 		
 		JLabel lblNewLabel = new JLabel("Menu Principal");
@@ -49,16 +45,16 @@ public class MenuView extends JFrame {
 				System.out.println("Botao de checkout");
 			}
 		});
-		btnCheckout.setBounds(149, 93, 139, 23);
+		btnCheckout.setBounds(283, 59, 139, 23);
 		contentPane.add(btnCheckout);
 		
-		JButton btnCheckout_1 = new JButton("Listar hospedagem");
+		JButton btnCheckout_1 = new JButton("Acomodacoes");
 		btnCheckout_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("Botao de listar hospedagem");
+				System.out.println("Botao de acomodacoes");
 			}
 		});
-		btnCheckout_1.setBounds(149, 138, 139, 23);
+		btnCheckout_1.setBounds(10, 118, 139, 23);
 		contentPane.add(btnCheckout_1);
 		
 		JButton btnCheckout_1_1 = new JButton("Catalogo");
@@ -68,7 +64,11 @@ public class MenuView extends JFrame {
 				catalogo.setVisible(true);
 			}
 		});
-		btnCheckout_1_1.setBounds(149, 176, 139, 23);
+		btnCheckout_1_1.setBounds(283, 118, 139, 23);
 		contentPane.add(btnCheckout_1_1);
+		
+		JButton btnCheckout_1_2 = new JButton("Conta");
+		btnCheckout_1_2.setBounds(149, 176, 139, 23);
+		contentPane.add(btnCheckout_1_2);
 	}
 }

@@ -132,8 +132,6 @@ public class CriarItemView extends JFrame {
 	}
 	
 	private void actionListar() {
-
-
 		List<String> lista = itemController.getItens();
 		textArea.setText(null);
 

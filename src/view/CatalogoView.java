@@ -53,19 +53,17 @@ public class CatalogoView extends JFrame {
 				criarItem.setVisible(true);
 			}
 		});
-		btnNewButton.setBounds(127, 30, 145, 23);
+		btnNewButton.setBounds(127, 45, 145, 23);
 		contentPane.add(btnNewButton);
-		
-		
-		
-		//CRIAR UM CONJUNTO DE BOTOES, BOTAO CADASTRO,BOTAO LISTAR...
+
 		JButton btnEditar = new JButton("Editar");
 		btnEditar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("testing");
+				AlterarItemView alterar = new AlterarItemView();
+				alterar.setVisible(true);
 			}
 		});
-		btnEditar.setBounds(127, 64, 145, 23);
+		btnEditar.setBounds(127, 110, 145, 23);
 		contentPane.add(btnEditar);
 		
 		JButton btnApagar = new JButton("Apagar");
@@ -75,7 +73,7 @@ public class CatalogoView extends JFrame {
 				apagar.setVisible(true);
 			}
 		});
-		btnApagar.setBounds(127, 98, 145, 23);
+		btnApagar.setBounds(127, 180, 145, 23);
 		contentPane.add(btnApagar);
 	}	
 }
