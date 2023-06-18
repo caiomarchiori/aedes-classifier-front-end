@@ -63,6 +63,7 @@ public class AlterarItemView extends JFrame{
 				alterarItem();
 			}
 		});
+		
 		btnNewButton.setBounds(279, 118, 145, 23);
 		contentPane.add(btnNewButton);
 		
@@ -95,14 +96,28 @@ public class AlterarItemView extends JFrame{
 		textField_3.setColumns(10);
 		textField_3.setBounds(104, 184, 116, 20);
 		contentPane.add(textField_3);
+		
+		JButton btnBuscar = new JButton("Buscar");
+		btnBuscar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Item item = itemController.buscarItemCodigo(textField.getText());
+				if(item!=null) {
+					textField_1.setText(item.getNome());
+					textField_2.setText(item.getDescricao());
+					textField_3.setText(""+item.getPreco());
+				}
+			}
+		});
+		btnBuscar.setBounds(279, 71, 145, 23);
+		contentPane.add(btnBuscar);
 	}
 
 	public void alterarItem() {
-		long codigo = Long.parseLong(textField.getText());
+		String codigo = textField.getText();
 		String nome = textField_1.getText();
 		String descricao = textField_2.getText();
-		double preco = Double.parseDouble(textField_3.getText());
+		String preco = textField_3.getText();
 
-		System.out.println(codigo + nome + descricao + preco);;
+		itemController.editarItem(codigo,nome,descricao,preco);
 	}
 }

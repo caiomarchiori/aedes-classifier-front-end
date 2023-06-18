@@ -48,6 +48,38 @@ public class ItemController {
 		}		
 	}
 	
+	public Item buscarItemCodigo(String codigo) {
+		long codigo_ = Long.parseLong(codigo);
+		for (Item item : itens) {
+			if(item.getCodigo()==codigo_) {
+				return item;
+			}
+		}
+		return null;
+	}
+	
+	public void editarItem(String codigo, String nome, String descricao, String preco) {
+		long codigo_ = Long.parseLong(codigo);
+		for (Item item : itens) {
+			if(item.getCodigo()==codigo_) {
+				double preco_ = Double.parseDouble(preco);	
+				item.setNome(nome);
+				item.setDescricao(descricao);
+				item.setPreco(preco_);
+				CreateSequentialFile fl = new CreateSequentialFile();
+				fl.openFile(filename);
+				try {
+					fl.addRecords(itens);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				fl.closeFile();
+			}
+		}
+		
+	}
+	
 	public void adicionarItem(Item item) { //apenas para teste.
 		try {
 			CreateSequentialFile fl = new CreateSequentialFile();
@@ -68,16 +100,25 @@ public class ItemController {
 			
 			for (Item item : itens) {
 				if(item.getCodigo()==codigo_) {
+					System.out.println("é igual\n");
 					itens.remove(item);
 				}
 			}
-			CreateSequentialFile fl = new CreateSequentialFile();
-			fl.openFile(filename);
-			fl.addRecords(itens);
-			fl.closeFile();
 		}
 		catch(Exception exx) {
+			System.out.println(exx.getMessage());
+			System.out.println("Excessão");
 			exx.getMessage();
+		}
+		finally {
+			CreateSequentialFile fl = new CreateSequentialFile();
+			fl.openFile(filename);
+			try {
+				fl.addRecords(itens);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			fl.closeFile();
 		}
 	}
 	
