@@ -8,6 +8,7 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
 import Model.Item;
+import Model.TipoAcomodacao;
 
 public class ReadSequentialFile {
 	
@@ -60,6 +61,33 @@ public class ReadSequentialFile {
 			throw ioExeception;
 		}
 		return itens;
+	}
+	
+	public ArrayList<TipoAcomodacao> readRecordsTipoAcomodacao() throws IOException {
+		ArrayList<TipoAcomodacao> tipoAcomodacoes = new ArrayList<>();
+		try {
+			TipoAcomodacao obj = null;
+			while ((obj = (TipoAcomodacao) input.readObject()) != null) {
+				System.out.println("Entrou\n");
+				tipoAcomodacoes.add(obj);
+			}
+		}
+		catch(EOFException endOfFileException) {
+			return tipoAcomodacoes;
+		}
+		catch(ClassNotFoundException classNotFoundException){
+			System.err.print("Classe incompativel para desserialização.");
+			System.exit(1);
+		}
+		catch(InvalidClassException invalidClassException) {
+			System.err.print("Classe incompatível para desserialização");
+			System.exit(1);
+		}
+		catch(IOException ioExeception) {
+			System.err.print("Erro de leitura do arquivo: ");
+			throw ioExeception;
+		}
+		return tipoAcomodacoes;
 	}
 	
 }
