@@ -40,7 +40,7 @@ public class CriarItemView extends JFrame {
 	ItemController itemController = new ItemController();
 	
 	public CriarItemView() {
-		setTitle("Catalogo de itens");
+		setTitle("Adicionar itens");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 
