@@ -17,7 +17,7 @@ public class MenuView extends JFrame {
 	private JPanel contentPane;
 
 	public MenuView() {
-		setTitle("Menu");
+		setTitle("Menu Principal");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 475, 300);
 		contentPane = new JPanel();
@@ -35,8 +35,8 @@ public class MenuView extends JFrame {
 		btnNewButton.setBounds(10, 59, 139, 23);
 		contentPane.add(btnNewButton);
 		
-		JLabel lblNewLabel = new JLabel("Menu Principal");
-		lblNewLabel.setBounds(180, 23, 84, 14);
+		JLabel lblNewLabel = new JLabel("Escolha sua opcao");
+		lblNewLabel.setBounds(163, 23, 128, 14);
 		contentPane.add(lblNewLabel);
 		
 		JButton btnCheckout = new JButton("Checkout");
@@ -69,7 +69,17 @@ public class MenuView extends JFrame {
 		contentPane.add(btnCheckout_1_1);
 		
 		JButton btnCheckout_1_2 = new JButton("Conta");
-		btnCheckout_1_2.setBounds(149, 176, 139, 23);
+		btnCheckout_1_2.setBounds(10, 189, 139, 23);
 		contentPane.add(btnCheckout_1_2);
+		
+		JButton btnCheckout_1_2_1 = new JButton("Hospedes");
+		btnCheckout_1_2_1.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			HospedesView hospedesView = new HospedesView();
+			hospedesView.setVisible(true);
+		}
+		});
+		btnCheckout_1_2_1.setBounds(283, 189, 139, 23);
+		contentPane.add(btnCheckout_1_2_1);
 	}
 }
