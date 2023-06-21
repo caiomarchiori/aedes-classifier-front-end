@@ -30,6 +30,7 @@
 /HospedagemView.class
 /AlterarItemView$2.class
 /CatalogoController.class
+<<<<<<< HEAD
 /AcomodacoesView.class
 /AcomodacoesView$1.class
 /AcomodacoesView$2.class
@@ -56,3 +57,36 @@
 /AlterarHospedesView.class
 /AlterarHospedesView$1.class
 /AlterarHospedesView$2.class
+=======
+/Acomodacao$1.class
+/Acomodacao$2.class
+/Acomodacao$3.class
+/Acomodacao.class
+/AcomodacaoView$1.class
+/AcomodacaoView$2.class
+/AcomodacaoView$3.class
+/AcomodacaoView.class
+/CategoriaView.class
+/CriarTipoAcomodacao$1.class
+/CriarTipoAcomodacao.class
+/CriarTipoAcomodacao$2.class
+/ListarTipoAcomodacaoView$1.class
+/ListarTipoAcomodacaoView$2.class
+/ListarTipoAcomodacaoView.class
+/TipoAcomodacaoView$1.class
+/TipoAcomodacaoView$2.class
+/TipoAcomodacaoView$3.class
+/TipoAcomodacaoView.class
+/CriarTipoAcomodacaoView$1.class
+/CriarTipoAcomodacaoView$2.class
+/CriarTipoAcomodacaoView.class
+/Snippet.class
+/AlterarTipoAcomodacaoView$1.class
+/AlterarTipoAcomodacaoView$2.class
+/AlterarTipoAcomodacaoView.class
+/blalballbal.class
+/ApagarTipoAcomodacaoView$1.class
+/ApagarTipoAcomodacaoView.class
+/temp.class
+/ApagarTipoAcomodacao.class
+>>>>>>> 9ae4267cdb33570a97af8a95189ac6c5d333c2fa

@@ -8,6 +8,7 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 import Model.Item;
+import Model.TipoAcomodacao;
 
 public class CreateSequentialFile {
 	
@@ -37,6 +38,23 @@ public class CreateSequentialFile {
 		try {
 			for (Item item : itens) {
 				output.writeObject(item);
+			}
+		}
+		
+		catch(IOException ioException) {
+			System.err.print("Erro ao escrever no arquivo\n");
+			throw ioException;
+		}
+		catch(NoSuchElementException elementException) {
+			System.err.println("Tente novamente");
+		}
+	}
+	
+public void addRecordsTipoAcomodacao(ArrayList<TipoAcomodacao> tipoAcomodacoes) throws IOException{
+		
+		try {
+			for (TipoAcomodacao tipoAcomodacao : tipoAcomodacoes) {
+				output.writeObject(tipoAcomodacao);
 			}
 		}
 		

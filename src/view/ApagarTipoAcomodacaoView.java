@@ -8,6 +8,7 @@ import javax.swing.border.EmptyBorder;
 
 import Model.Item;
 import controller.ItemController;
+import controller.TipoAcomodacaoController;
 
 import java.awt.FlowLayout;
 import javax.swing.JList;
@@ -17,22 +18,26 @@ import javax.swing.JScrollPane;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.List;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.JLabel;
 import javax.swing.JCheckBox;
 import javax.swing.JTable;
+import javax.swing.JScrollBar;
 
-public class CatalogoView extends JFrame {
+public class ApagarTipoAcomodacaoView extends JFrame {
 
 	private JPanel contentPane;
+	private JTextField textField;
 	
 	private JPanel contentPane2;
 
-	private ItemController itemController = new ItemController();
+	TipoAcomodacaoController tipoAcomodacaoController = new TipoAcomodacaoController();
 	
-	public CatalogoView() {
-		setTitle("Catalogo de itens");
+	public ApagarTipoAcomodacaoView() {
+		setTitle("Apagar Tipo acomodação");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 
@@ -45,35 +50,28 @@ public class CatalogoView extends JFrame {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(38, 123, 347, -104);
 		contentPane.add(scrollPane);
+		JLabel lblCodigo = new JLabel("Nome");
+		lblCodigo.setBounds(38, 96, 46, 14);
+		textField = new JTextField();
+		textField.setBounds(90, 93, 116, 20);
+		textField.setColumns(10);
+		contentPane.add(textField);
 		
-		JButton btnNewButton = new JButton("Adicionar/Listar item");
+		JButton btnNewButton = new JButton("Apagar Tipo Acomodacao");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				CriarItemView criarItem = new CriarItemView();
-				criarItem.setVisible(true);
+				apagarTipoAcomodacao(textField.getText());
 			}
 		});
-		btnNewButton.setBounds(127, 45, 145, 23);
+		btnNewButton.setBounds(267, 92, 145, 23);
 		contentPane.add(btnNewButton);
-
-		JButton btnEditar = new JButton("Editar");
-		btnEditar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				AlterarItemView alterar = new AlterarItemView();
-				alterar.setVisible(true);
-			}
-		});
-		btnEditar.setBounds(127, 110, 145, 23);
-		contentPane.add(btnEditar);
 		
-		JButton btnApagar = new JButton("Apagar");
-		btnApagar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				ApagarItemView apagar = new ApagarItemView();
-				apagar.setVisible(true);
-			}
-		});
-		btnApagar.setBounds(127, 180, 145, 23);
-		contentPane.add(btnApagar);
-	}	
+		
+		contentPane.add(lblCodigo);
+		
+	}
+	
+	public void apagarTipoAcomodacao(String nome) {
+		tipoAcomodacaoController.apagarTipoAcomodacao(nome);
+	}
 }

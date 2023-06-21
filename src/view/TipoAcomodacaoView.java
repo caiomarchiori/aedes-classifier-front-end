@@ -23,16 +23,16 @@ import javax.swing.JLabel;
 import javax.swing.JCheckBox;
 import javax.swing.JTable;
 
-public class CatalogoView extends JFrame {
+public class TipoAcomodacaoView extends JFrame {
 
 	private JPanel contentPane;
 	
 	private JPanel contentPane2;
 
-	private ItemController itemController = new ItemController();
+	ItemController itemController = new ItemController();
 	
-	public CatalogoView() {
-		setTitle("Catalogo de itens");
+	public TipoAcomodacaoView() {
+		setTitle("Tipo de Acomodações");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 
@@ -46,11 +46,11 @@ public class CatalogoView extends JFrame {
 		scrollPane.setBounds(38, 123, 347, -104);
 		contentPane.add(scrollPane);
 		
-		JButton btnNewButton = new JButton("Adicionar/Listar item");
+		JButton btnNewButton = new JButton("Adicionar/Listar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				CriarItemView criarItem = new CriarItemView();
-				criarItem.setVisible(true);
+				CriarTipoAcomodacaoView criarTipoAcomodacao = new CriarTipoAcomodacaoView();
+				criarTipoAcomodacao.setVisible(true);
 			}
 		});
 		btnNewButton.setBounds(127, 45, 145, 23);
@@ -59,7 +59,7 @@ public class CatalogoView extends JFrame {
 		JButton btnEditar = new JButton("Editar");
 		btnEditar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AlterarItemView alterar = new AlterarItemView();
+				AlterarTipoAcomodacaoView alterar = new AlterarTipoAcomodacaoView();
 				alterar.setVisible(true);
 			}
 		});
@@ -69,7 +69,7 @@ public class CatalogoView extends JFrame {
 		JButton btnApagar = new JButton("Apagar");
 		btnApagar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ApagarItemView apagar = new ApagarItemView();
+				ApagarTipoAcomodacaoView apagar = new ApagarTipoAcomodacaoView();
 				apagar.setVisible(true);
 			}
 		});
