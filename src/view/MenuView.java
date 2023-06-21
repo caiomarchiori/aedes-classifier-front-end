@@ -51,13 +51,10 @@ public class MenuView extends JFrame {
 		JButton btnCheckout_1 = new JButton("Acomodacoes");
 		btnCheckout_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-<<<<<<< HEAD
 				AcomodacoesView acomodacao = new AcomodacoesView();
 				acomodacao.setVisible(true);
-=======
 				TipoAcomodacaoView tipoAcomodacaoView = new TipoAcomodacaoView();
 				tipoAcomodacaoView.setVisible(true);
->>>>>>> 9ae4267cdb33570a97af8a95189ac6c5d333c2fa
 			}
 		});
 		btnCheckout_1.setBounds(10, 118, 139, 23);
