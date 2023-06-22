@@ -1,4 +1,4 @@
-package view;
+package view.Hospede;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,10 +11,13 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import controller.HospedeController;
+
 public class ApagarHospedesView extends JFrame{
 
 	private JPanel contentPane;
 	private JTextField textField;
+	private HospedeController hospedeController = new HospedeController();
 	
 	public ApagarHospedesView() {
 	
@@ -41,7 +44,7 @@ public class ApagarHospedesView extends JFrame{
 		JButton btnNewButton = new JButton("Apagar hospede");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//apagarItem(textField.getText());
+				hospedeController.removerHospede(textField.getText());
 				System.out.println("Testing");
 			}
 		});

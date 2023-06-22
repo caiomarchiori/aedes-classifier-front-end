@@ -8,7 +8,6 @@ import controller.ItemController;
 import persistencia.CreateSequentialFile;
 import persistencia.ReadSequentialFile;
 import view.MenuView;
-import view.ViewJ;
 
 public class Main {
 

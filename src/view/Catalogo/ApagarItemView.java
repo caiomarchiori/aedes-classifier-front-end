@@ -1,4 +1,4 @@
-package view;
+package view.Catalogo;
 
 import java.awt.EventQueue;
 
@@ -8,7 +8,6 @@ import javax.swing.border.EmptyBorder;
 
 import Model.Item;
 import controller.ItemController;
-import controller.TipoAcomodacaoController;
 
 import java.awt.FlowLayout;
 import javax.swing.JList;
@@ -27,17 +26,17 @@ import javax.swing.JCheckBox;
 import javax.swing.JTable;
 import javax.swing.JScrollBar;
 
-public class ApagarTipoAcomodacaoView extends JFrame {
+public class ApagarItemView extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
 	
 	private JPanel contentPane2;
 
-	TipoAcomodacaoController tipoAcomodacaoController = new TipoAcomodacaoController();
+	ItemController itemController = new ItemController();
 	
-	public ApagarTipoAcomodacaoView() {
-		setTitle("Apagar Tipo acomodação");
+	public ApagarItemView() {
+		setTitle("Apagar itens");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 
@@ -50,17 +49,17 @@ public class ApagarTipoAcomodacaoView extends JFrame {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(38, 123, 347, -104);
 		contentPane.add(scrollPane);
-		JLabel lblCodigo = new JLabel("Nome");
+		JLabel lblCodigo = new JLabel("Codigo");
 		lblCodigo.setBounds(38, 96, 46, 14);
 		textField = new JTextField();
 		textField.setBounds(90, 93, 116, 20);
 		textField.setColumns(10);
 		contentPane.add(textField);
 		
-		JButton btnNewButton = new JButton("Apagar Tipo Acomodacao");
+		JButton btnNewButton = new JButton("Apagar item");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				apagarTipoAcomodacao(textField.getText());
+				apagarItem(textField.getText());
 			}
 		});
 		btnNewButton.setBounds(267, 92, 145, 23);
@@ -71,7 +70,7 @@ public class ApagarTipoAcomodacaoView extends JFrame {
 		
 	}
 	
-	public void apagarTipoAcomodacao(String nome) {
-		tipoAcomodacaoController.apagarTipoAcomodacao(nome);
+	public void apagarItem(String codigo) {
+		itemController.removerItem(codigo);
 	}
 }

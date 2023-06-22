@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+import Model.Hospede;
 import Model.Item;
 import Model.TipoAcomodacao;
 
@@ -50,7 +51,7 @@ public class CreateSequentialFile {
 		}
 	}
 	
-public void addRecordsTipoAcomodacao(ArrayList<TipoAcomodacao> tipoAcomodacoes) throws IOException{
+	public void addRecordsTipoAcomodacao(ArrayList<TipoAcomodacao> tipoAcomodacoes) throws IOException{
 		
 		try {
 			for (TipoAcomodacao tipoAcomodacao : tipoAcomodacoes) {
@@ -67,5 +68,22 @@ public void addRecordsTipoAcomodacao(ArrayList<TipoAcomodacao> tipoAcomodacoes) 
 		}
 	}
 	
-	
+	public void addRecordsHospedes(ArrayList<Hospede> hospedes) throws IOException{
+		
+		try {
+			for (Hospede hospede : hospedes) {
+				output.writeObject(hospede);
+			}
+		}
+		
+		catch(IOException ioException) {
+			System.err.print("Erro ao escrever no arquivo\n");
+			throw ioException;
+		}
+		catch(NoSuchElementException elementException) {
+			System.err.println("Tente novamente");
+		}
+	}
+
+
 }

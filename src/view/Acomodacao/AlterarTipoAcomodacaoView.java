@@ -1,4 +1,4 @@
-package view;
+package view.Acomodacao;
 
 import java.awt.EventQueue;
 

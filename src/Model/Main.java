@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import controller.ItemController;
 import persistencia.CreateSequentialFile;
 import persistencia.ReadSequentialFile;
-import view.ViewJ;
 
 public class Main {
 

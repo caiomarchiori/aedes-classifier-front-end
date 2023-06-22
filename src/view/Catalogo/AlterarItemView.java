@@ -1,4 +1,4 @@
-package view;
+package view.Catalogo;
 
 import java.awt.EventQueue;
 

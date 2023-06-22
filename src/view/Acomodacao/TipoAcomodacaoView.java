@@ -1,24 +1,38 @@
-package view;
+package view.Acomodacao;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.EventQueue;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-public class HospedesView extends JFrame{
+import Model.Item;
+import controller.ItemController;
+
+import java.awt.FlowLayout;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
+import javax.swing.JComboBox;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JCheckBox;
+import javax.swing.JTable;
+
+public class TipoAcomodacaoView extends JFrame {
 
 	private JPanel contentPane;
-	private JPanel contentPane2;
 	
-	public HospedesView() {
+	private JPanel contentPane2;
 
-		setTitle("Menu de hospedes");
+	ItemController itemController = new ItemController();
+	
+	public TipoAcomodacaoView() {
+		setTitle("Tipo de Acomodações");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 
@@ -32,12 +46,11 @@ public class HospedesView extends JFrame{
 		scrollPane.setBounds(38, 123, 347, -104);
 		contentPane.add(scrollPane);
 		
-		JButton btnNewButton = new JButton("Adicionar/Listar Hospedes");
+		JButton btnNewButton = new JButton("Adicionar/Listar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				CriarHospedesView criar = new CriarHospedesView();
-				criar.setVisible(true);
-
+				CriarTipoAcomodacaoView criarTipoAcomodacao = new CriarTipoAcomodacaoView();
+				criarTipoAcomodacao.setVisible(true);
 			}
 		});
 		btnNewButton.setBounds(127, 45, 145, 23);
@@ -46,7 +59,7 @@ public class HospedesView extends JFrame{
 		JButton btnEditar = new JButton("Editar");
 		btnEditar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AlterarHospedesView alterar = new AlterarHospedesView();
+				AlterarTipoAcomodacaoView alterar = new AlterarTipoAcomodacaoView();
 				alterar.setVisible(true);
 			}
 		});
@@ -56,12 +69,11 @@ public class HospedesView extends JFrame{
 		JButton btnApagar = new JButton("Apagar");
 		btnApagar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ApagarHospedesView apagar = new ApagarHospedesView();
+				ApagarTipoAcomodacaoView apagar = new ApagarTipoAcomodacaoView();
 				apagar.setVisible(true);
 			}
 		});
 		btnApagar.setBounds(127, 180, 145, 23);
 		contentPane.add(btnApagar);
 	}
-
 }

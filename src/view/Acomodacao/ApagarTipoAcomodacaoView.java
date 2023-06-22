@@ -1,4 +1,4 @@
-package view;
+package view.Acomodacao;
 
 import java.awt.EventQueue;
 
@@ -8,6 +8,7 @@ import javax.swing.border.EmptyBorder;
 
 import Model.Item;
 import controller.ItemController;
+import controller.TipoAcomodacaoController;
 
 import java.awt.FlowLayout;
 import javax.swing.JList;
@@ -26,17 +27,17 @@ import javax.swing.JCheckBox;
 import javax.swing.JTable;
 import javax.swing.JScrollBar;
 
-public class ApagarItemView extends JFrame {
+public class ApagarTipoAcomodacaoView extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
 	
 	private JPanel contentPane2;
 
-	ItemController itemController = new ItemController();
+	TipoAcomodacaoController tipoAcomodacaoController = new TipoAcomodacaoController();
 	
-	public ApagarItemView() {
-		setTitle("Apagar itens");
+	public ApagarTipoAcomodacaoView() {
+		setTitle("Apagar Tipo acomodação");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 
@@ -49,17 +50,17 @@ public class ApagarItemView extends JFrame {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(38, 123, 347, -104);
 		contentPane.add(scrollPane);
-		JLabel lblCodigo = new JLabel("Codigo");
+		JLabel lblCodigo = new JLabel("Nome");
 		lblCodigo.setBounds(38, 96, 46, 14);
 		textField = new JTextField();
 		textField.setBounds(90, 93, 116, 20);
 		textField.setColumns(10);
 		contentPane.add(textField);
 		
-		JButton btnNewButton = new JButton("Apagar item");
+		JButton btnNewButton = new JButton("Apagar Tipo Acomodacao");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				apagarItem(textField.getText());
+				apagarTipoAcomodacao(textField.getText());
 			}
 		});
 		btnNewButton.setBounds(267, 92, 145, 23);
@@ -70,7 +71,7 @@ public class ApagarItemView extends JFrame {
 		
 	}
 	
-	public void apagarItem(String codigo) {
-		itemController.removerItem(codigo);
+	public void apagarTipoAcomodacao(String nome) {
+		tipoAcomodacaoController.apagarTipoAcomodacao(nome);
 	}
 }
