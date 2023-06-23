@@ -1,5 +1,6 @@
 package view.Acomodacao;
 
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -8,7 +9,7 @@ import javax.swing.border.EmptyBorder;
 
 import Model.Item;
 import controller.ItemController;
-import controller.TipoAcomodacaoController;
+import controller.AcomodacaoController;
 
 import java.awt.FlowLayout;
 import javax.swing.JList;
@@ -34,7 +35,7 @@ public class ApagarTipoAcomodacaoView extends JFrame {
 	
 	private JPanel contentPane2;
 
-	TipoAcomodacaoController tipoAcomodacaoController = new TipoAcomodacaoController();
+	AcomodacaoController AcomodacaoController = new AcomodacaoController();
 	
 	public ApagarTipoAcomodacaoView() {
 		setTitle("Apagar Tipo acomodação");
@@ -72,6 +73,6 @@ public class ApagarTipoAcomodacaoView extends JFrame {
 	}
 	
 	public void apagarTipoAcomodacao(String nome) {
-		tipoAcomodacaoController.apagarTipoAcomodacao(nome);
+		AcomodacaoController.apagarTipoAcomodacao(nome);
 	}
 }

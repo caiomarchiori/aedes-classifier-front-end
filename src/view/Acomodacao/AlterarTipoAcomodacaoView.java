@@ -9,7 +9,7 @@ import javax.swing.border.EmptyBorder;
 import Model.Item;
 import Model.TipoAcomodacao;
 import controller.ItemController;
-import controller.TipoAcomodacaoController;
+import controller.AcomodacaoController;
 
 import java.awt.FlowLayout;
 import javax.swing.JList;
@@ -33,7 +33,7 @@ public class AlterarTipoAcomodacaoView extends JFrame{
 	private JPanel contentPane;
 	private JTextField textField;
 
-	TipoAcomodacaoController tipoAcomodacaoController = new TipoAcomodacaoController();
+	private controller.AcomodacaoController AcomodacaoController = new controller.AcomodacaoController();
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JLabel lblCodigo_4;
@@ -92,7 +92,7 @@ public class AlterarTipoAcomodacaoView extends JFrame{
 		JButton btnBuscar = new JButton("Buscar");
 		btnBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TipoAcomodacao tipoAcomodacao = tipoAcomodacaoController.buscarAcomodacao(textField.getText());
+				TipoAcomodacao tipoAcomodacao = AcomodacaoController.buscarAcomodacao(textField.getText());
 				if(tipoAcomodacao!=null) {
 					textField_1.setText(""+tipoAcomodacao.getTarifaDiaria());
 					textField_2.setText(""+tipoAcomodacao.getAdicionalAcompanhante());
@@ -105,9 +105,8 @@ public class AlterarTipoAcomodacaoView extends JFrame{
 
 	public void alterarTipoAcomodacao() {
 		String nome = textField.getText();
-		
-String tarifaDiaria = textField_1.getText();
+		String tarifaDiaria = textField_1.getText();
 		String adicionalAcompanhante = textField_2.getText();
-		tipoAcomodacaoController.editarTipoAcomodacao(nome,tarifaDiaria,adicionalAcompanhante);
+		AcomodacaoController.editarTipoAcomodacao(nome,tarifaDiaria,adicionalAcompanhante);
 	}
 }

@@ -8,13 +8,13 @@ import Model.TipoAcomodacao;
 import persistencia.CreateSequentialFile;
 import persistencia.ReadSequentialFile;
 
-public class TipoAcomodacaoController {
+public class AcomodacaoController {
 
 	ReadSequentialFile application = new ReadSequentialFile();
 	ArrayList<TipoAcomodacao> tipoAcomodacoes;
 	String filename = "tipoAcomodacao.bin";
 	
-	public TipoAcomodacaoController(){
+	public AcomodacaoController(){
 		
 		if(!application.openFile(filename)) {
 			CreateSequentialFile fl = new CreateSequentialFile();
@@ -71,7 +71,7 @@ public class TipoAcomodacaoController {
 		
 	}
 	
-	public void adicionarItem(String nome, String tarifaDiaria, String adicionalAcompanhante) {
+	public void adicionarTipoAcomodacao(String nome, String tarifaDiaria, String adicionalAcompanhante) {
 		try {
 			double tarifaDiaria_ = Double.parseDouble(tarifaDiaria);
 			double adicionalAcompanhante_ = Double.parseDouble(adicionalAcompanhante);
@@ -87,7 +87,7 @@ public class TipoAcomodacaoController {
 		}
 	}
 	
-	public void apagarTipoAcomodacao(String nome) { //apenas para teste.
+	public void apagarTipoAcomodacao(String nome) {
 		try {			
 			for (TipoAcomodacao tipoAcomodacao : tipoAcomodacoes) {
 				if(tipoAcomodacao.getNome().compareTo(nome)==0) {
@@ -121,6 +121,7 @@ public class TipoAcomodacaoController {
 
 		return lista;
 	}
+	
 	/*
 	public String listarItens() {
 		StringBuilder sb = new StringBuilder();

@@ -2,13 +2,14 @@ package view.Acomodacao;
 
 import java.awt.EventQueue;
 
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Model.Item;
 import controller.ItemController;
-import controller.TipoAcomodacaoController;
+import controller.AcomodacaoController;
 
 import java.awt.FlowLayout;
 import javax.swing.JList;
@@ -38,7 +39,7 @@ public class CriarTipoAcomodacaoView extends JFrame {
 	
 	private JPanel contentPane2;
 
-	TipoAcomodacaoController tipoAcomodacaoController = new TipoAcomodacaoController();
+	AcomodacaoController AcomodacaoController = new AcomodacaoController();
 	
 	public CriarTipoAcomodacaoView() {
 		setTitle("Catalogo de itens");
@@ -58,7 +59,7 @@ public class CriarTipoAcomodacaoView extends JFrame {
 		JButton btnNewButton = new JButton("Adicionar TipoAcomodacao");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				adicionarItem();
+				adicionarTipoAcomodacao();
 				limparCampos();
 			}
 		});
@@ -92,7 +93,7 @@ public class CriarTipoAcomodacaoView extends JFrame {
 		lblNewLabel_1_1.setBounds(33, 125, 60, 14);
 		contentPane.add(lblNewLabel_1_1);
 		
-		JButton btnNewButton2 = new JButton("Listar itens");
+		JButton btnNewButton2 = new JButton("Listar Tipos Acomodações");
 		btnNewButton2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionListar();
@@ -111,14 +112,14 @@ public class CriarTipoAcomodacaoView extends JFrame {
 		
 	}
 	
-	public void adicionarItem() {
-		tipoAcomodacaoController.adicionarItem(textField.getText(),textField_1.getText(),textField_2.getText());
+	public void adicionarTipoAcomodacao() {
+		AcomodacaoController.adicionarTipoAcomodacao(textField.getText(),textField_1.getText(),textField_2.getText());
 		limparCampos();
 	}
 	
 	
 	private void actionListar() {
-		List<String> lista = tipoAcomodacaoController.getTiposAcomodacao();
+		List<String> lista = AcomodacaoController.getTiposAcomodacao();
 		textArea.setText(null);
 
 		for (String strTipoAcomodacao : lista) {

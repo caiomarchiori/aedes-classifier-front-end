@@ -12,6 +12,7 @@ public class Hospedagem implements Serializable{
 
 	private static final long serialVersionUID = 484748652502511402L;
 
+	static int numHospedagens = 0;
 	private final String id; // random id
 	private static int inicioCheckin = 13;
 	private static int limiteCheckout = 12;
@@ -26,9 +27,10 @@ public class Hospedagem implements Serializable{
 	private ArrayList<IHospede>acompanhantes = new ArrayList<>();
 	private ArrayList<Pagamento>pagamentos = new ArrayList<>();
 		
-	public Hospedagem(String id, IConta conta, IAcomodacao acomodacao, IHospede hospede){
+	public Hospedagem(String id, IAcomodacao acomodacao, IHospede hospede){
 		this.id = java.util.UUID.randomUUID().toString();
-		this.conta = conta;
+		numHospedagens++;
+		this.conta = new Conta(numHospedagens);
 		this.acomodacao = acomodacao;
 		this.hospede = hospede;
 	}

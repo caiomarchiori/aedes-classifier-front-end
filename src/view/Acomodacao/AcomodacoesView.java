@@ -37,7 +37,7 @@ public class AcomodacoesView extends JFrame{
 			criar.setVisible(true);
 		}
 		});
-		btnNewButton.setBounds(38, 51, 145, 23);
+		btnNewButton.setBounds(146, 30, 145, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Deletar");
@@ -47,7 +47,7 @@ public class AcomodacoesView extends JFrame{
 			apagar.setVisible(true);
 		}
 		});
-		btnNewButton_1.setBounds(240, 153, 145, 23);
+		btnNewButton_1.setBounds(146, 134, 145, 23);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Editar");
@@ -57,7 +57,7 @@ public class AcomodacoesView extends JFrame{
 			alterar.setVisible(true);
 		}
 		});
-		btnNewButton_2.setBounds(38, 153, 145, 23);
+		btnNewButton_2.setBounds(146, 98, 145, 23);
 		contentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Listar");
@@ -67,8 +67,18 @@ public class AcomodacoesView extends JFrame{
 			listar.setVisible(true);
 		}
 		});
-		btnNewButton_3.setBounds(240, 51, 145, 23);
+		btnNewButton_3.setBounds(146, 64, 145, 23);
 		contentPane.add(btnNewButton_3);
+		
+		JButton btnNewButton_1_1 = new JButton("Tipos Acomodações");
+		btnNewButton_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TipoAcomodacaoView tipoAcomodacaoView = new TipoAcomodacaoView();
+				tipoAcomodacaoView.setVisible(true);
+			}
+		});
+		btnNewButton_1_1.setBounds(146, 168, 145, 23);
+		contentPane.add(btnNewButton_1_1);
 	}
 }
 

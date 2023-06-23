@@ -15,11 +15,11 @@ import javax.swing.JButton;
 public class CriarAcomodacoesView extends JFrame{
 	
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
+	private JTextField txt_tipoAcomodacao;
+	private JTextField txt_tarifa;
+	private JTextField txt_adicional;
+	private JTextField txt_ocupacao;
+	private JTextField txt_numero;
 
 	public CriarAcomodacoesView() {
 		setTitle("Adicionar acomodacoes");
@@ -36,28 +36,28 @@ public class CriarAcomodacoesView extends JFrame{
 		scrollPane.setBounds(38, 123, 347, -104);
 		contentPane.add(scrollPane);
 
-		textField = new JTextField();
-		textField.setBounds(33, 36, 86, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		txt_tipoAcomodacao = new JTextField();
+		txt_tipoAcomodacao.setBounds(33, 36, 86, 20);
+		contentPane.add(txt_tipoAcomodacao);
+		txt_tipoAcomodacao.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(33, 107, 86, 20);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		txt_tarifa = new JTextField();
+		txt_tarifa.setBounds(33, 107, 86, 20);
+		contentPane.add(txt_tarifa);
+		txt_tarifa.setColumns(10);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(253, 107, 86, 20);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
+		txt_adicional = new JTextField();
+		txt_adicional.setBounds(253, 107, 86, 20);
+		contentPane.add(txt_adicional);
+		txt_adicional.setColumns(10);
 		
-		textField_3 = new JTextField();
-		textField_3.setBounds(33, 178, 86, 20);
-		contentPane.add(textField_3);
-		textField_3.setColumns(10);
+		txt_ocupacao = new JTextField();
+		txt_ocupacao.setBounds(33, 178, 86, 20);
+		contentPane.add(txt_ocupacao);
+		txt_ocupacao.setColumns(10);
 
 		
-		JLabel lblNewLabel = new JLabel("Nome");	// STRING
+		JLabel lblNewLabel = new JLabel("Tipo Acomodacao");	// STRING
 		lblNewLabel.setBounds(33, 15, 46, 14);
 		contentPane.add(lblNewLabel);
 		
@@ -73,10 +73,10 @@ public class CriarAcomodacoesView extends JFrame{
 		lblNewLabel_3.setBounds(33, 153, 125, 14);
 		contentPane.add(lblNewLabel_3);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(253, 36, 86, 20);
-		contentPane.add(textField_4);
+		txt_numero = new JTextField();
+		txt_numero.setColumns(10);
+		txt_numero.setBounds(253, 36, 86, 20);
+		contentPane.add(txt_numero);
 		
 		JLabel lblNewLabel_4 = new JLabel("Numero");	// INT
 		lblNewLabel_4.setBounds(253, 15, 46, 14);
@@ -84,11 +84,15 @@ public class CriarAcomodacoesView extends JFrame{
 		
 		JButton btnNewButton = new JButton("Inserir");
 		btnNewButton.addActionListener(new ActionListener() {
-		public void actionPerformed(ActionEvent e) {
-			System.out.println("Botao de inserir");
-		}
+			public void actionPerformed(ActionEvent e) {
+				actionInserir();
+			}
 		});
 		btnNewButton.setBounds(253, 177, 89, 23);
 		contentPane.add(btnNewButton);
 	}
+	private void actionInserir() {
+		
+	}
+	
 }
