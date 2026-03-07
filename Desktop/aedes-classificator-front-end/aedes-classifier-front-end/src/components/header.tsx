@@ -2,6 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
+import Logo from "../assets/cefet .png"
+import { MdLanguage } from "react-icons/md";
 
 export function Header() {
   const pathname = usePathname();
@@ -18,21 +21,15 @@ export function Header() {
   return (
     <div className="w-full border-black border-b-2 border-opacity-10 rounded-md px-32 py-4">
       <div className="flex items-center justify-between">
+        <Image
+          src={Logo}
+          alt="Logo CEFET/RJ"
+          width={150}
+          height={20}
+        />
 
-        {/* LOGO */}
-        <div className="flex items-center gap-3">
-          <div className="w-8 h-8 bg-blue-700 rounded-sm flex items-center justify-center text-white font-bold">
-            F
-          </div>
-          <span className="font-semibold text-blue-900">
-            CEFET/RJ
-          </span>
-        </div>
-
-        {/* DIVIDER */}
         <div className="w-0.5 h-12 bg-[#E2E2E2]" />
 
-        {/* NAVBAR */}
         <nav className="flex items-center space-x-12 text-[#1351B4] font-semibold">
 
           {navLinks.map((link) => {
@@ -51,11 +48,11 @@ export function Header() {
 
         </nav>
 
-        {/* DIVIDER */}
         <div className="w-0.5 h-12 bg-[#E2E2E2]" />
 
-        {/* LANGUAGE */}
         <div className="flex items-center space-x-4">
+          <MdLanguage size={22} className="text-[#1351B4] text-opacity-50" />
+
           <button className="text-[#1351B4] font-bold">
             pt-br
           </button>
