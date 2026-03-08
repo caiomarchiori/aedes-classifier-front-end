@@ -60,7 +60,7 @@ export const options = [
                 As CNNs são frequentemente empregadas para classificação de imagens, segmentação, detec-
                 ção de objetos, processamento de vídeos, processamento de linguagem natural e reconhecimento de
                 fala
-                <p className="text-blue-400">Otimização na classificação automática de mosquitos adultos: uma investigação com redes neurais convolucionais - Daniel da Silva Motta - 2019</p>
+                <p className="text-blue-400">Otimização na classificação automática de mosquitos adultos: uma investigação com redes neurais convolucionais, Daniel da Silva Motta, 2019</p>
             </p>
         )
     },

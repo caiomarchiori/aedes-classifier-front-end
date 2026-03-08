@@ -14,7 +14,7 @@ export function Header() {
     { label: "Aedes aegypti", href: "/aedes" },
     { label: "Dengue", href: "/dengue" },
     { label: "Chikungunya", href: "/chikungunya" },
-    { label: "Febre Amarela", href: "/febre-amarela" },
+    { label: "Febre Amarela", href: "/febreAmarela" },
     { label: "Zika", href: "/zika" },
   ];
 
