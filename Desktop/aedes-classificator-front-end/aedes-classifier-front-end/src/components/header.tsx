@@ -19,7 +19,7 @@ export function Header() {
   ];
 
   return (
-    <div className="w-full border-black border-b-2 border-opacity-10 rounded-md px-32 py-4">
+    <div className="w-full border-black border-b-2 border-opacity-10 rounded-md px-32 py-1">
       <div className="flex items-center justify-between">
         <Image
           src={Logo}
