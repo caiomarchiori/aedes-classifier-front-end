@@ -1,16 +1,33 @@
 
 import Link from "next/link";
-import DengueSource from "../assets/dengue-virus.png"
-import { InfoLayout } from "@/components/info-layout";
+import DengueSource from "../assets/dengue-virus.png";
+import { DiseaseLayout } from "@/components/disease-layout";
 
 export default function Dengue() {
-    const style = "text-blue-500 hover:underline"
+
+    const symptoms = [
+        "Febre alta",
+        "Enjoo",
+        "Dor atrás dos olhos",
+        "Dores de cabeça",
+        "Dores nas articulações",
+        "Náuseas",
+        "Vômitos",
+        "Manchas vermelhas pelo corpo",
+        "Cansaço",
+        "Irritabilidade",
+        "Dificuldade de respirar",
+        "Tontura"
+    ];
+
+    const style = "text-blue-500 hover:underline";
+
     return (
-        <InfoLayout
+        <DiseaseLayout
             image={DengueSource}
             imageAlt="Dengue"
-            font="https://dengue.com.br/virus/"
-            imageWidth={650}
+            font="https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue"
+            symptoms={symptoms}
         >
             <p className="text-lg">
                 A <strong>dengue</strong> é uma infecção viral causada pelo <strong>vírus da dengue (DENV)</strong> e transmitida aos seres humanos principalmente pela picada de
@@ -29,15 +46,15 @@ export default function Dengue() {
                 O manejo da doença baseia-se principalmente no <strong>controle da dor e no acompanhamento médico adequado</strong>, especialmente em casos mais graves.
                 A <strong>detecção precoce</strong> e o acesso a cuidados de saúde apropriados contribuem para reduzir significativamente a mortalidade.
                 <br></br>
-                A forma mais eficaz de prevenir a doença é por meio do <strong>controle do mosquito transmissor</strong> e da redução das picadas, principalmente durante o dia. 
+                A forma mais eficaz de prevenir a doença é por meio do <strong>controle do mosquito transmissor</strong> e da redução das picadas, principalmente durante o dia.
                 Medidas como a eliminação de água parada e a adoção de ações de vigilância e controle do vetor são fundamentais para diminuir a transmissão da doença.
                 <br></br>
                 Nas últimas décadas, a dengue se expandiu rapidamente em todo o mundo. O número de casos registrados pela
-                Organização Mundial da Saúde passou de <strong>505 mil em 2000 para mais de 14,6 milhões em 2024</strong>. Nesse mesmo ano, foram registradas mais de 
+                Organização Mundial da Saúde passou de <strong>505 mil em 2000 para mais de 14,6 milhões em 2024</strong>. Nesse mesmo ano, foram registradas mais de
                 <strong>12 mil mortes</strong> relacionadas à doença, com grande parte dos casos ocorrendo na Região das <strong>Américas</strong>.
                 <br></br>
                 <br></br>
-                Adaptado de Organizacao Mundial da Saúde
+                Adaptado de Organizacao Mundial da Saúde:
                 <a
                     href="https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue"
                     target="_blank"
@@ -47,7 +64,6 @@ export default function Dengue() {
                     https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue
                 </a>
             </p>
-        </InfoLayout>
-
+        </DiseaseLayout>
     );
 }

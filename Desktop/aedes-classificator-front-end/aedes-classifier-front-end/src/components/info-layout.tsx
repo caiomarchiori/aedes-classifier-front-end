@@ -16,7 +16,7 @@ export function InfoLayout({
   imageWidth
 }: InfoLayoutProps) {
   return (
-    <div className="w-full mx-auto mt-16 flex justify-between p-6 space-x-12">
+    <div className="w-full mx-auto mt-5 flex justify-between p-6 space-x-12">
       
       <div className="rounded-lg shadow-lg p-4 border border-black/5">
         <div className="text-lg">
