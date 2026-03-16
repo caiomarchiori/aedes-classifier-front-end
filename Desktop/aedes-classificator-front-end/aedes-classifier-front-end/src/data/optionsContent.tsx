@@ -1,5 +1,8 @@
 import { PiFirstAidBold, PiBrainBold } from "react-icons/pi";
 import { GiChoice } from "react-icons/gi";
+import { FaPython } from "react-icons/fa";
+import { MdOutlineLiveHelp } from "react-icons/md";
+
 
 export const options = [
     {
@@ -65,7 +68,7 @@ export const options = [
         )
     },
     {
-        title: "Como funciona a classificação de imagens?",
+        title: "Como funciona a classificação de imagens ?",
         icon: <GiChoice className="text-[#FAAD4F]" size={30} />,
         content: (
             <p>
@@ -77,5 +80,32 @@ export const options = [
                 a probabilidade de a imagem pertencer a cada uma das classes possíveis. A classe com maior probabilidade é então selecionada como resultado da classificação.
             </p>
         )
+    },
+    {
+        title: "Como a IA pode ajudar no combate às arboviroses ?",
+        icon: <MdOutlineLiveHelp className="text-[#FAAD4F]" size={30} />,
+        content: (
+            <p>
+                Utilizando técnicas de Visão Computacional
+                e Aprendizado de Máquina, algoritmos podem analisar características visuais dos insetos, como formato do corpo, padrões nas asas e outras estruturas
+                morfológicas, permitindo identificar espécies de forma rápida e automatizada.
+                Esse tipo de tecnologia pode auxiliar pesquisadores e profissionais de saúde pública na vigilância entomológica, que é o monitoramento das populações de
+                mosquitos em determinadas regiões. Com sistemas automatizados de classificação, é possível analisar grandes quantidades de imagens com mais rapidez,
+                reduzindo o tempo necessário para a identificação manual feita por especialistas.
+                Além disso, ferramentas baseadas em IA podem contribuir para identificar áreas com maior risco de infestação, apoiar programas de controle do
+                vetor e melhorar estratégias de prevenção. Dessa forma, a tecnologia se torna uma aliada importante no combate às arboviroses, ajudando a tornar
+                o monitoramento mais eficiente e possibilitando respostas mais rápidas diante de surtos.
+            </p>
+        )
+    },
+    {
+        title: "O que é o modelo MobileNetV2",
+        icon: <FaPython className="text-[#FAAD4F]" size={25} />,
+        content: (
+            <p>
+
+            </p>
+        )
     }
+
 ];
