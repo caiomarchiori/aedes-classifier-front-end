@@ -53,13 +53,10 @@ export function Header() {
         <div className="flex items-center space-x-4">
           <MdLanguage size={22} className="text-[#1351B4] text-opacity-50" />
 
-          <button className="text-[#1351B4] font-bold">
+          <p className="text-[#1351B4] font-bold">
             pt-br
-          </button>
+          </p>
 
-          <button className="text-[#1351B4]/50 font-bold hover:text-[#1351B4] transition-colors">
-            en-us
-          </button>
         </div>
 
       </div>
