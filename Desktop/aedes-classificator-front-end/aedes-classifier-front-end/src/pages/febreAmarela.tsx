@@ -20,7 +20,7 @@ export default function FebreAmarela(){
     return (
         <DiseaseLayout
             image={FebreSource}
-            imageAlt="Chikungunya"
+            imageAlt="FebreAmarela"
             font="https://www.dw.com/pt-br/minist%C3%A9rio-da-sa%C3%BAde-confirma-25-mortes-por-febre-amarela/a-37218966"
             symptoms={symptoms}
         >
