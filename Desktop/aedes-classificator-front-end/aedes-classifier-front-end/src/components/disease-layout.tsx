@@ -20,8 +20,8 @@ export function DiseaseLayout({
   children
 }: DiseaseLayoutProps) {
   return (
-    <div className="flex flex-col space-y-20 items-center max-h-[700px] overflow-y-auto">
-      
+    <div className="flex flex-col space-y-20 items-center max-h-[650px] overflow-y-auto">
+
       <InfoLayout
         image={image}
         imageAlt={imageAlt}

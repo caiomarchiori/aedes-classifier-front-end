@@ -1,7 +1,7 @@
 import { PiFirstAidBold, PiBrainBold } from "react-icons/pi";
 import { GiChoice } from "react-icons/gi";
-import { FaPython } from "react-icons/fa";
 import { MdOutlineLiveHelp } from "react-icons/md";
+import { MdDataset } from "react-icons/md";
 
 
 export const options = [
@@ -90,7 +90,9 @@ export const options = [
                 e Aprendizado de Máquina, algoritmos podem analisar características visuais dos insetos, como formato do corpo, padrões nas asas e outras estruturas
                 morfológicas, permitindo identificar espécies de forma rápida e automatizada.
                 Esse tipo de tecnologia pode auxiliar pesquisadores e profissionais de saúde pública na vigilância entomológica, que é o monitoramento das populações de
-                mosquitos em determinadas regiões. Com sistemas automatizados de classificação, é possível analisar grandes quantidades de imagens com mais rapidez,
+                mosquitos em determinadas regiões.
+                <br></br>
+                Com sistemas automatizados de classificação, é possível analisar grandes quantidades de imagens com mais rapidez,
                 reduzindo o tempo necessário para a identificação manual feita por especialistas.
                 Além disso, ferramentas baseadas em IA podem contribuir para identificar áreas com maior risco de infestação, apoiar programas de controle do
                 vetor e melhorar estratégias de prevenção. Dessa forma, a tecnologia se torna uma aliada importante no combate às arboviroses, ajudando a tornar
@@ -99,11 +101,23 @@ export const options = [
         )
     },
     {
-        title: "O que é o modelo MobileNetV2",
-        icon: <FaPython className="text-[#FAAD4F]" size={25} />,
+        title: "Conjunto de dados utilizados",
+        icon: <MdDataset className="text-[#FAAD4F]" size={25} />,
         content: (
             <p>
-
+                Os conjuntos de dados são fundamentais para treinar, validar e testar modelos de aprendizado de máquina, garantindo que eles aprendam a reconhecer
+                padrões corretamente.
+                <br></br>
+                Neste trabalho, foram utilizados dois conjuntos de dados distintos, cada um contendo imagens de mosquitos em diferentes condições e espécies.
+                O dataset  <a className="text-blue-500 underline" href="https://www.kaggle.com/datasets/pradeepisawasan/aedes-mosquitos"target="_blank"rel="noopener noreferrer">Aedes Mosquitos Dataset</a> contém
+                imagens rotuladas de mosquitos Aedes aegypti e Aedes albopictus, capturadas em diferentes ângulos e iluminações.
+                O dataset <a className="text-blue-500 underline" href="https://data.mendeley.com/datasets/88s6fvgg2p/4"target="_blank"rel="noopener noreferrer">Dataset of Vector Mosquito Images Mendeley</a> apresenta
+                uma variedade maior de espécies de mosquitos, incluindo Aedes aegypti, Anopheles stephensi e Culex quinquefasciatus.
+                Ele fornece diversidade em termos de posição, tamanho e iluminação das imagens, permitindo que o modelo generalize melhor para diferentes
+                cenários de captura.
+                <br></br>
+                Ambos os datasets foram pré-processados, normalizando o tamanho e o formato das imagens, para garantir consistência na entrada dos modelos.
+                Além disso, técnicas de aumento de dados (como rotações e ajustes de brilho) também foram aplicadas.
             </p>
         )
     }

@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { SearchBar } from "@/components/search-bar";
 import { FaFileUpload } from "react-icons/fa";
 import { useRef, useState } from "react";
+import { MdClose } from "react-icons/md";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -65,12 +66,12 @@ export default function App({ Component, pageProps }: AppProps) {
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="h-screen flex flex-col overflow-hidden">
       <Header />
       <div className="flex justify-end px-4 mt-2 relative">
         <div className="relative group">
           <button className="bg-blue-400 text-white p-2 rounded-full hover:bg-blue-500 duration-500" onClick={onClickDatasetOption}>
-            <FaFileUpload size={20} />
+            {!showDatasetOptions ? <FaFileUpload size={20} /> : <MdClose size={20} />}
           </button>
           {!showDatasetOptions &&
             <span className="absolute -right-2 bottom-10 mt-1 scale-0 group-hover:scale-100 transition-transform bg-gray-800 text-white text-xs rounded py-1 px-2">
@@ -78,18 +79,18 @@ export default function App({ Component, pageProps }: AppProps) {
             </span>
           }
           {showDatasetOptions && (
-            <div className="absolute right-0 mt-2 bg-white border rounded shadow-lg z-50">
+            <div className="absolute right-0 mt-2 bg-white border rounded shadow-lg z-50 whitespace-nowrap">
               <button
-                className="block px-4 py-2 hover:bg-blue-100 w-full text-left"
+                className="block px-4 py-2 hover:bg-blue-100 w-full text-left font-semibold"
                 onClick={() => handleDatasetSelect("kaggle")}
               >
-                Kaggle
+                Aedes Mosquitos Dataset
               </button>
               <button
-                className="block px-4 py-2 hover:bg-blue-100 w-full text-left"
+                className="block px-4 py-2 hover:bg-blue-100 w-full text-left font-semibold"
                 onClick={() => handleDatasetSelect("mendelev")}
               >
-                Mendelev
+                Dataset of Vector Mosquito Images Mendeley
               </button>
             </div>
           )}
