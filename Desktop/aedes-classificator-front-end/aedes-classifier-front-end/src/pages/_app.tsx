@@ -118,11 +118,11 @@ export default function App({ Component, pageProps }: AppProps) {
       )}
       {showModal && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 w-[350px] text-center shadow-xl">
-            <h2 className="text-xl font-bold mb-4">
-              Resultado da Classificação
+          <div className="bg-white rounded-lg p-6 w-[500px] text-center shadow-xl flex flex-col space-y-6">
+            <h2 className="text-xl font-bold">
+              Resultado da classificação para <em>Aedes aegypti</em>
             </h2>
-            <p className="text-lg mb-4">
+            <p className="text-2xl font-semibold">
               {result.probability + '%'}
             </p>
             <button
