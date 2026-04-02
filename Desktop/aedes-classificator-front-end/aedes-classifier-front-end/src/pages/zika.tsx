@@ -24,7 +24,7 @@ export default function Zika() {
             font="http://crbio08.gov.br/noticias/saude/cientistas-desvendam-estrutura-do-virus-zika/"
             symptoms={symptoms}
         >
-            <p className="text-lg">
+            <div className="text-lg">
                 A <strong>Zika</strong> é uma  <strong>arbovirose</strong> causada pelo vírus Vírus Zika (ZIKV).
                 Arboviroses são doenças <strong>virais</strong> transmitidas principalmente pela picada de mosquitos infectados.
                 <br></br>
@@ -70,7 +70,7 @@ export default function Zika() {
                 >
                     https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/z/zika-virus
                 </a>
-            </p>
+            </div>
         </DiseaseLayout>
     );
 }

@@ -7,6 +7,7 @@ import { SearchBar } from "@/components/search-bar";
 import { FaFileUpload } from "react-icons/fa";
 import { useRef, useState } from "react";
 import { MdClose } from "react-icons/md";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -17,6 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<any>(null);
   const [showModal, setShowModal] = useState(false);
+  const [errorSnackbar, setErrorSnackbar] = useState<string | null>(null);
   const [showDatasetOptions, setShowDatasetOptions] = useState(false);
 
   const handleDatasetSelect = (selected: "kaggle" | "mendelev") => {
@@ -51,7 +53,9 @@ export default function App({ Component, pageProps }: AppProps) {
       setShowModal(true);
 
     } catch (error) {
-      console.error("Erro ao enviar imagem:", error);
+      console.log("Error:", error);
+      setErrorSnackbar("Erro ao classificar a imagem selecionada");
+      setTimeout(() => setErrorSnackbar(null), 4000);
     } finally {
       setLoading(false);
     }
@@ -104,9 +108,9 @@ export default function App({ Component, pageProps }: AppProps) {
         </div>
       </div>
       {showSearch && <SearchBar />}
-      <main className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col">
         <Component {...pageProps} />
-      </main>
+      </div>
       <Footer />
       {loading && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
@@ -130,10 +134,22 @@ export default function App({ Component, pageProps }: AppProps) {
             >
               Fechar
             </button>
-
           </div>
         </div>
       )}
+      <AnimatePresence>
+        {errorSnackbar && (
+          <motion.div
+            initial={{ opacity: 0, x: 300 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 300 }}
+            transition={{ duration: 0.5 }}
+            className="fixed top-5 right-5 px-6 py-2 rounded shadow-lg text-white bg-red-500 z-50"
+          >
+            {errorSnackbar}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
