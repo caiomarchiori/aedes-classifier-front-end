@@ -1,11 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
 import { FaLinkedin, FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa6";
 
 export function Footer() {
 
   const navLinks = [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/caio-marchiori-808994263", icon: FaLinkedin },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/laura-assis-42499164", icon: FaLinkedinIn },
     { label: "Facebook", href: "https://web.facebook.com/minsaude?_rdc=1&_rdr#", icon: FaFacebook },
     { label: "Instagram", href: "https://www.instagram.com/minsaude", icon: FaInstagram },
     { label: "YouTube", href: "https://www.youtube.com/minsaudebr", icon: FaYoutube }
