@@ -8,7 +8,7 @@ export function Symptoms({symptoms}:SymptomsType) {
     return (
         <div className="w-full px-6">
             <div className="relative border-2 border-orange-400 rounded-xl px-24 py-14">
-                <div className="absolute -top-9 left-1/2 -translate-x-1/2 bg-orange-400 px-[750px] rounded-full flex items-center gap-3 shadow-lg">
+                <div className="absolute -top-9 left-1/2 -translate-x-1/2 bg-orange-400 px-[400px] xl:px-[500px] 2xl:px-[630px] rounded-full flex items-center gap-3 shadow-lg">
                     <div className="bg-white p-3 rounded-full shadow-black/60 shadow-md">
                         <FaUsers size={40} className="text-[#FF4500]" />
                     </div>
