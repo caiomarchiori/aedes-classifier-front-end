@@ -10,13 +10,13 @@ export const options = [
         icon: <PiFirstAidBold className="text-[#FAAD4F]" size={25} />,
         content: (
             <p>
-                O controle do mosquito Aedes aegypti é fundamental para a saúde pública,
+                O controle do mosquito <em>Aedes aegypti</em> é fundamental para a saúde pública,
                 pois essa espécie é o principal vetor de diversas arboviroses que afetam
                 milhões de pessoas no mundo, como dengue, zika, chikungunya e febre amarela.
                 Esses vírus são transmitidos quando o mosquito infectado pica seres humanos,
                 permitindo a circulação das doenças em áreas urbanas e tropicais.
                 <br /><br />
-                Além disso, o Aedes aegypti apresenta características que favorecem sua disseminação:
+                Além disso, o <em>Aedes aegypti</em> apresenta características que favorecem sua disseminação:
                 ele vive próximo às habitações humanas, reproduz-se em recipientes com água parada e pode picar várias
                 pessoas durante um mesmo período de alimentação. Esse comportamento aumenta significativamente
                 velocidade de transmissão dos vírus dentro das comunidades
